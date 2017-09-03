@@ -1,18 +1,14 @@
-
-
-
-
-################################## problem 1 ##################################
+################################# problem 1 ##################################
 
 
 def seq(n):
     return (n*(n+1))/2
 
 
-print(3*seq(333) + 5*seq(199) - 15*seq(66))  
+print(3*seq(333) + 5*seq(199) - 15*seq(66))
 
 
-################################## problem 2 ##################################
+################################# problem 2 ##################################
 
 
 a = 1
@@ -28,10 +24,10 @@ while c < 4000000:
     if (a % 2) == 0:
         even_sum += a
 
-print(even_sum)      
+print(even_sum)
 
 
-################################## problem 3 ##################################
+################################# problem 3 ##################################
 
 
 divisors = [1]
@@ -72,3 +68,26 @@ while multiply(divisors) < number:
 print(max(divisors))
 
 
+################################# problem 4 ##################################
+
+
+def is_palindrom(num):
+    num = str(num)
+    half1 = num[0:3]
+    half2 = num[5] + num[4] + num[3]
+    return half1 == half2
+
+
+numbers = []
+pals = []
+
+for i in range(100):
+    numbers.append([999 * (999 - i), 999 - i])
+
+for j in range(100):
+    for i in numbers:
+        if is_palindrom(i[0]):
+            pals.append(i[0])
+        i[0] -= i[1]
+
+print(max(pals))
