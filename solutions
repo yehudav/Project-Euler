@@ -34,4 +34,41 @@ print(even_sum)
 ################################## problem 3 ##################################
 
 
+divisors = [1]
+number = 600851475143
+p = 2
+temp = number
+
+
+def find_primes(num, prime):
+    while prime < num:
+        if num / prime == 1:
+            return num
+
+        if num / prime == int(num / prime):
+            return prime
+
+        prime += 1
+    return 1
+
+
+def multiply(div):
+    num = 1
+    for n in div:
+        num *= n
+    return num
+
+
+while multiply(divisors) < number:
+    q = find_primes(temp, p)
+    temp /= q
+    if q != 1:
+        divisors.append(q)
+
+    else:
+        divisors.append(int(temp))
+        break
+
+print(max(divisors))
+
 
