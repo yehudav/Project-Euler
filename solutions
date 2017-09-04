@@ -91,3 +91,97 @@ for j in range(100):
         i[0] -= i[1]
 
 print(max(pals))
+
+
+
+
+################################ problem 5 ##################################
+
+
+num = 2520
+primes = []
+
+while num > 1:
+    div = 0
+    for i in range(20):
+        if num / (i + 2) == int(num / (i + 2)):
+            primes.append(i + 2)
+            div = i + 2
+            break
+    num /= div
+
+for j in range(10):
+    p = j + 11
+    for i in primes:
+        if p % i == 0:
+            p = int(p/i)
+
+    primes.append(p)
+
+for i in primes:
+    num *= i
+
+print(num)
+
+
+################################ problem 6 ##################################
+
+
+sum_of_squares = 0
+square_of_sum = 0
+
+for i in range(101):
+    square_of_sum += i
+    sum_of_squares += i*i
+
+square_of_sum *= square_of_sum
+
+print(square_of_sum - sum_of_squares)
+
+
+################################ problem 7 ##################################
+
+
+def is_prime(num, primes):
+    for i in primes:
+        if num % i == 0:
+            return False
+    return True
+
+primes = [2]
+cur = 3
+
+while len(primes) < 10001:
+    if is_prime(cur, primes):
+        primes.append(cur)
+    cur += 2
+
+print(primes)
+
+
+################################ problem 25 ##################################
+
+
+a = 89
+b = 144
+counter = 12
+
+while len(str(b)) < 1000:
+    temp = a
+    a = b
+    b += temp
+    counter += 1
+
+print (counter)
+
+
+
+
+
+
+
+
+
+
+
+
