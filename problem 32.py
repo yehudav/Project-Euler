@@ -1,11 +1,9 @@
-"""     problem 21        """
-
+"""         problem 32           """
 
 digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 
-def are_pandigital(sttr,digits):
-
+def are_pandigital(sttr, digits):
     for d in digits:
         if d not in sttr:
             return False
@@ -24,7 +22,7 @@ for i in range(31434):
         if len(sttr) > 9:
             break
 
-        if are_pandigital(sttr,digits):
+        if are_pandigital(sttr, digits):
             pandigitals.append(p)
 
 ls = list(set(pandigitals))

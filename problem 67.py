@@ -1,5 +1,4 @@
-"""     problem 67        """
-
+"""         problem 67           """
 
 
 def create_matrix(path):

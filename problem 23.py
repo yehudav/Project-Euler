@@ -1,5 +1,4 @@
-"""     problem 21        """
-
+"""         problem 23           """
 
 import math
 
@@ -38,6 +37,3 @@ for num in abundant_numbers_sum_no_duplicates:
         sum_of_non_abundant -= num
 
 print(sum_of_non_abundant)
-
-
-

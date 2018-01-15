@@ -1,4 +1,4 @@
-"""     problem 21        """
+"""         problem 52           """
 
 
 def contains_the_same_digits(n):
@@ -41,6 +41,3 @@ while True:
     j += 1
 
 print(num)
-
-
-

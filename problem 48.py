@@ -1,4 +1,4 @@
-"""     problem 21        """
+"""         problem 48           """
 
 
 def power(x, y):
@@ -22,6 +22,3 @@ for i in range(1, 1001):
 digits = str(power_sum)
 
 print(digits[2991:])
-
-
-

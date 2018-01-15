@@ -1,4 +1,4 @@
-"""     problem 21        """
+"""         problem 34           """
 
 
 def factorial(n):
@@ -8,7 +8,6 @@ def factorial(n):
 
 
 def sum_of_factorial(n):
-
     factorial_sum = 0
     num = n
 
@@ -31,6 +30,3 @@ for i in numbers:
     factorial_sum += i
 
 print(factorial_sum - 3)
-
-
-

@@ -1,4 +1,4 @@
-"""     problem 7        """
+"""         problem 7           """
 
 
 def is_prime(num, primes_list):

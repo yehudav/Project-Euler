@@ -1,7 +1,7 @@
-"""     problem 21        """
+"""         problem 33           """
 
 
-def remove_common_digit_frac(a,b):
+def remove_common_digit_frac(a, b):
     p = a[0]
     q = a[1]
     r = b[0]
@@ -15,8 +15,6 @@ def remove_common_digit_frac(a,b):
     if t == "0":
         t = "1"
 
-
-
     if p == r:
         return int(q) / int(t)
     if p == t:
@@ -29,10 +27,10 @@ def remove_common_digit_frac(a,b):
 
 fracs = []
 
-for i in range(10,100):
-    for j in range(10,100):
+for i in range(10, 100):
+    for j in range(10, 100):
         a = str(i)
         b = str(j)
-        new_frac = remove_common_digit_frac(a,b)
-        if new_frac == i/j and i%10!= 0 and j%10!= 0 and i/j <1:
-            print(i,j)
+        new_frac = remove_common_digit_frac(a, b)
+        if new_frac == i / j and i % 10 != 0 and j % 10 != 0 and i / j < 1:
+            print(i, j)

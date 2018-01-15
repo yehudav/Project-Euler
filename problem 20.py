@@ -1,4 +1,4 @@
-"""     problem 20       """
+"""         problem 20           """
 
 
 def factorial(n):
@@ -18,8 +18,3 @@ def factorial_digits_sum(num):
 
 
 print(factorial_digits_sum(100))
-
-
-
-
-

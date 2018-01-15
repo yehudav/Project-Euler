@@ -1,4 +1,4 @@
-"""     problem 21        """
+"""         problem 26           """
 
 
 # for trail in digits:
@@ -13,8 +13,6 @@
 
 def max_recurring_cycle(string):
     cycles_num = 0
-
-
 
     return cycles_num
 

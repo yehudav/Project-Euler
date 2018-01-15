@@ -1,5 +1,4 @@
-"""     problem 21        """
-
+"""         problem 28           """
 
 nums = []
 diagnols_sum = 0
@@ -21,6 +20,3 @@ while j < 1002001:
     j += jump
 
 print(diagnols_sum)
-
-
-

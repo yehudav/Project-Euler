@@ -1,4 +1,4 @@
-"""     problem 21        """
+"""         problem 30           """
 
 
 def sum_of_power(n):
@@ -6,7 +6,7 @@ def sum_of_power(n):
     num = n
 
     while num > 0:
-        powers_sum += ((num % 10)**5)
+        powers_sum += ((num % 10) ** 5)
         num = int(num / 10)
 
     return powers_sum
@@ -24,6 +24,3 @@ for i in numbers:
     sum_of_nums += i
 
 print(sum_of_nums)
-
-
-

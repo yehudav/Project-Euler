@@ -1,4 +1,4 @@
-"""     problem 8        """
+"""         problem 8           """
 
 
 def max_adjacent_digits_product(number, adjacent_digits_num):

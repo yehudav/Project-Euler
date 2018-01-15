@@ -1,4 +1,4 @@
-"""     problem 21        """
+"""         problem 21           """
 
 
 def sum_of_divisors(num):
@@ -26,5 +26,3 @@ def amicable_numbers_sum(bound):
 
 
 print(amicable_numbers_sum(10000))
-
-

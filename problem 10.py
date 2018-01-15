@@ -1,4 +1,4 @@
-"""     problem 10        """
+"""         problem 10           """
 
 
 import math

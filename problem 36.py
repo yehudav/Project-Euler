@@ -1,12 +1,12 @@
-"""     problem 21        """
-
+"""         problem 36           """
 
 import math
+
 
 def is_palindrom(num):
     middle = math.floor(len(num))
     first_half = num[:middle:1]
-    second_half = num[middle+1::-1]
+    second_half = num[middle + 1::-1]
     return first_half == second_half
 
 
@@ -20,6 +20,3 @@ for i in range(1000000):
         sum_of_palidroms += i
 
 print(sum_of_palidroms)
-
-
-

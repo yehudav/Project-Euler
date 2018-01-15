@@ -1,4 +1,5 @@
-"""     problem 21        """
+"""         problem 49           """
+
 from theAlgo import algorithms as algo
 import itertools
 
@@ -21,12 +22,12 @@ for i in aaaa:
 aaaa = aaaa[j:]
 
 for i in range(len(aaaa)):
-    for j in range(i + 1,len( aaaa)):
-        for k in range(j + 1,len( aaaa)):
-            if aaaa[i] -aaaa[j] == aaaa[j]-aaaa[k]:
+    for j in range(i + 1, len(aaaa)):
+        for k in range(j + 1, len(aaaa)):
+            if aaaa[i] - aaaa[j] == aaaa[j] - aaaa[k]:
 
                 st = str(aaaa[i]) + str(aaaa[j]) + str(aaaa[k])
                 per = list(map("".join, itertools.permutations(str(aaaa[i]))))
-                if str(aaaa[k]) in per and  str(aaaa[j]) in per  and aaaa[i]!= 1487:
+                if str(aaaa[k]) in per and str(aaaa[j]) in per and aaaa[i] != 1487:
                     print(st)
                     exit(0)

@@ -1,4 +1,4 @@
-"""     problem 6        """
+"""         problem 6           """
 
 
 def sum_of_squares(n):

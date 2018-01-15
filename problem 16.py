@@ -1,4 +1,4 @@
-"""     problem 16        """
+"""         problem 16           """
 
 
 def find_digits_sum(base, exponent):

@@ -1,4 +1,5 @@
-"""     problem 21        """
+"""         problem 56           """
+
 
 def digits_sum(n):
     n_sum = 0
@@ -32,6 +33,3 @@ for a in range(100):
             max_sum = cur_sum
 
 print(max_sum)
-
-
-

@@ -1,4 +1,4 @@
-"""     problem 1        """
+"""         problem 1           """
 
 
 def arithmetic_series_sum(n):

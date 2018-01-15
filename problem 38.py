@@ -1,17 +1,17 @@
-"""     problem 21        """
+"""         problem 38           """
 
 
 def is_pandigital(num):
-    if len(num)!= 9:
+    if len(num) != 9:
         return False
-    for i in range(1,10):
+    for i in range(1, 10):
         if str(i) not in num:
             return False
     return True
 
 
 lis = []
-for i in range(1,10000):
+for i in range(1, 10000):
     st = ""
     a = i
     while len(st) < 9:

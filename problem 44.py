@@ -1,10 +1,10 @@
-"""     problem 21        """
-
+"""         problem 44           """
 
 import math
 
+
 def is_pentagonal(x):
-    n = (math.sqrt(24 * x + 1) + 1 ) / 6
+    n = (math.sqrt(24 * x + 1) + 1) / 6
     return n == int(n)
 
 

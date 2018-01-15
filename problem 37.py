@@ -1,5 +1,4 @@
-"""     problem 21        """
-
+"""         problem 37           """
 
 import math
 
@@ -27,7 +26,7 @@ def truncable(pp):
     strr = str(pp)
     a = strr
     b = strr
-    while len(a) >1:
+    while len(a) > 1:
         a = a[1:]
         if lis[int(a)] == 0 and int(a) != 2:
             return False
@@ -46,11 +45,11 @@ for p in lis:
         trunc.append(p)
 
 sum = 0
-i= 1
+i = 1
 for pp in trunc:
     stt = str(pp)
     if stt.startswith("1") == False and stt.endswith("1") == False:
-        print(pp ,  i)
+        print(pp, i)
         sum += int(pp)
-        i+=1
+        i += 1
 print(sum)

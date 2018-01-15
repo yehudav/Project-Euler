@@ -1,11 +1,12 @@
-"""     problem 21        """
+"""         problem 41           """
+
 import math
 
 
 def pandigital(num):
     st = str(num)
     for i in range(len(st)):
-        if str(i+1) not in st:
+        if str(i + 1) not in st:
             return False
     return True
 
@@ -15,7 +16,7 @@ primes = []
 for p in range(10000000):
     primes.append(p)
 
-sqr = int( math.sqrt(10000000) + 3)
+sqr = int(math.sqrt(10000000) + 3)
 for i in range(2, sqr):
     if primes[i] != 0:
         k = i + i
