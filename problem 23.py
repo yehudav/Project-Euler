@@ -1,39 +1,50 @@
 """         problem 23           """
 
-import math
-
 
 def div_sum(number):
     divs_sum = 0
-    bound = int(math.floor(number / 2))
+    bound = number // 2 + 1
 
-    for i in range(bound):
-        if number % (i + 1) == 0:
-            divs_sum += i + 1
+    for i in range(1, bound):
+        if number % i == 0:
+            divs_sum += i
 
     return divs_sum
 
 
-abundant_numbers = []
-abundant_numbers_sum = []
-j = 12
+def get_abundant_num_list(bound):
+    j = 12
+    abundant_numbers = []
 
-while j < 28134:
-    if div_sum(j) > j:
-        abundant_numbers.append(j)
+    while j < bound:
+        if div_sum(j) > j:
+            abundant_numbers.append(j)
 
-    j += 1
+        j += 1
+    return abundant_numbers
 
-sum_of_non_abundant = int((28123 * 28124) / 2)
 
-for num_a in abundant_numbers:
-    for num_b in abundant_numbers:
-        abundant_numbers_sum.append(num_a + num_b)
+def sums_of_abundant_numbers(abundant_numbers):
+    sums_set = set()
+    for num_a in abundant_numbers:
+        for num_b in abundant_numbers:
+            sums_set.add(num_a + num_b)
 
-abundant_numbers_sum_no_duplicates = list(set(abundant_numbers_sum))
+    return sums_set
 
-for num in abundant_numbers_sum_no_duplicates:
-    if num < 28124:
-        sum_of_non_abundant -= num
 
-print(sum_of_non_abundant)
+def sum_of_non_abundant(bound=28124):
+    non_abundant_sum = (bound * (bound - 1)) // 2
+
+    abundant_numbers_list = get_abundant_num_list(bound)
+
+    abundant_numbers_sum_list = list(sums_of_abundant_numbers(abundant_numbers_list))
+
+    for num in abundant_numbers_sum_list:
+        if num < bound:
+            non_abundant_sum -= num
+
+    return non_abundant_sum
+
+
+print(sum_of_non_abundant())
