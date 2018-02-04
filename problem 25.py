@@ -1,15 +1,17 @@
 """         problem 25           """
 
-f11 = 89
-f12 = 144
-counter = 12
-fn_minus_2 = f11
-fn_minus_1 = f12
 
-while len(str(fn_minus_1)) < 1000:
-    temp = fn_minus_2
-    fn_minus_2 = fn_minus_1
-    fn_minus_1 += temp
-    counter += 1
+def n_digits_fibonacci(n):
+    fn_minus_2 = 1
+    fn_minus_1 = 1
+    counter = 2
 
-print(counter)
+    while len(str(fn_minus_1)) < n:
+        fn_minus_1 += fn_minus_2
+        fn_minus_2 = fn_minus_1 - fn_minus_2
+        counter += 1
+
+    return counter
+
+
+print(n_digits_fibonacci(1000))
