@@ -1,22 +1,18 @@
 """         problem 28           """
 
-nums = []
-diagnols_sum = 0
-jump = 2
 
-for i in range(1, 1002002):
-    nums.append(i)
+def diagonals_sum(bound):
+    spiral_length = bound ** 2
+    cur_num = 1
+    sum_of_diagonals = 1
+    jump = 2
 
-j = 0
-jump_index = 0
-
-while j < 1002001:
-    if jump_index == 4:
+    while cur_num < spiral_length:
+        sum_of_diagonals += jump * 10 + cur_num * 4
+        cur_num += 4 * jump
         jump += 2
-        jump_index = 0
 
-    diagnols_sum += nums[j]
-    jump_index += 1
-    j += jump
+    return sum_of_diagonals
 
-print(diagnols_sum)
+
+print(diagonals_sum(1001))
