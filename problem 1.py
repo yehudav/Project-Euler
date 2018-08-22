@@ -5,6 +5,7 @@ def arithmetic_series_sum(n):
     return (n * (n + 1)) // 2
 
 
+
 def multiples_num(M, n):
     return M // n
 
