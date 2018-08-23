@@ -14,6 +14,7 @@ def sieve_of_eranthoses(bound):
         k = j + j
         while k < bound:
             primes[k] = 0
+            k += j
     return primes
 
 
@@ -37,7 +38,7 @@ def get_odd_composites(bound, primes):
 
 def get_squares(bound):
     lis = []
-    for i in range(1, bound // 2):
+    for i in range(1, bound // 2 + 2):
         lis.append(2 * i ** 2)
     return lis
 
@@ -59,4 +60,6 @@ def min_odd_composite_counter(bound):
             return o
     return "ohhh bound not big enough"
 
-print(min_odd_composite_counter(1000))
+# print(min_odd_composite_counter(10))
+print(sieve_of_eranthoses(1000))
+# print(get_odd_composites(1000, sieve_of_eranthoses(1000)))
