@@ -1,22 +1,25 @@
 """         problem 3           """
 
+def divide_or_return(num):
 
-def find_max_prime_factor(num):
+def get_prime_factors(num):
     divisors = {1}
-    current_candidate_prime = 2
+    cur = 2
     current_unknown_factors_product = num
 
     while current_unknown_factors_product > 1:
-        if current_unknown_factors_product % current_candidate_prime == 0:
-            current_unknown_factors_product /= current_candidate_prime
-            divisors.add(current_candidate_prime)
-
-        elif current_candidate_prime > 2:
-            current_candidate_prime += 2
+        if current_unknown_factors_product % cur == 0:
+            current_unknown_factors_product /= cur
+            divisors.add(cur)
 
         else:
-            current_candidate_prime += 1
+            cur += min(cur - 1, 2)
 
+    return divisors
+
+
+def find_max_prime_factor(num):
+    divisors = get_prime_factors(num)
     return max(divisors)
 
 
