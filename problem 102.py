@@ -2,7 +2,7 @@
 
 
 def oa(x1, y1, x2, y2):
-    k = 0.5 *
+    k = 0.5
 
     if k < 0:
         return -1
