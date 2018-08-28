@@ -1,6 +1,7 @@
 """         problem 46           """
 
 import math
+import numpy as np
 
 
 def sieve_of_eranthoses(bound):
@@ -9,6 +10,7 @@ def sieve_of_eranthoses(bound):
     while i < bound:
         primes.append(i)
         primes.append(0)
+        i += 2
 
     for j in range(3, int(math.sqrt(bound))):
         k = j + j
@@ -53,13 +55,12 @@ def min_odd_composite_counter(bound):
     for sqr in squars_list:
         for p in primes_list:
             options_lis.append(p + sqr)
-    options_lis = list(set(options_lis)).sort()
+    options_lis = sorted(list(set(options_lis)))
 
     for o in odd_composits_list:
         if o not in options_lis:
             return o
     return "ohhh bound not big enough"
 
-# print(min_odd_composite_counter(10))
-print(sieve_of_eranthoses(1000))
-# print(get_odd_composites(1000, sieve_of_eranthoses(1000)))
+
+print(min_odd_composite_counter(5778))
