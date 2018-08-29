@@ -3,11 +3,11 @@
 def divide_or_return(num):
 
 def get_prime_factors(num):
-    divisors = {1}
-    cur = 2
-    current_unknown_factors_product = num
+    divisors = []
+    cur_factor = 2
+    cur_val = num
 
-    while current_unknown_factors_product > 1:
+    while cur_val > 1:
         if current_unknown_factors_product % cur == 0:
             current_unknown_factors_product /= cur
             divisors.add(cur)

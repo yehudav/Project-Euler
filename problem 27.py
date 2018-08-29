@@ -33,4 +33,22 @@ def remove_zeros(lis):
 
 def primes(bound):
     primes = remove_zeros(sieve_of_eranthoses(bound))
+    max_num = 0
+    max_a = -2000
+    max_b = -2000
     for b in primes:
+        for a in range(b):
+            n = 0
+            while n + a < b:
+                c = n ** 2 + a * n + b
+                if c not in primes:
+                    break
+                max_num = n
+                n += 1
+                max_a = a
+                max_b = b
+    print(max_b, max_a, max_num)
+
+
+# primes(1000)
+print(len(set(sieve_of_eranthoses(1000))))
