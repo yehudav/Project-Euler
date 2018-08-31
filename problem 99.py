@@ -12,15 +12,16 @@ def load_bases_and_exponents(path):
     return bases_and_exps_pairs
 
 
+def decide(a, b):
+
+
 def get_max_base(pair1, pair2):
-    if pair1[0] < pair2[0] and pair1[1] < pair2[1]:
+    if pair1[0] <= pair2[0] and pair1[1] <= pair2[1]:
         return pair2
-    if pair1[0] > pair2[0] and pair1[1] > pair2[1]:
-            return pair1
+    if pair1[0] >= pair2[0] and pair1[1] >= pair2[1]:
+        return pair1
+    return decide(pair1, pair2)
 
-    
-
-    return pair1
 
 def get_max_numeric_line_num(path):
     bases = load_bases_and_exponents(path)
