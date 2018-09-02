@@ -6,27 +6,40 @@ def get_lis(bound, jump, first, first_jump):
     low_bound = bound // 10
     i = first
     while i < bound:
-        if i >= low_bound:
+        if i >= low_bound and str(i)[2] != "0":
             lis.append(str(i))
         i += first_jump
         first_jump += jump
     return lis
 
 
-def narrow(cur, prev, next):
-    aaa = set()
-    for a in cur:
-        for b in next:
-            if a[2:] == b[:2]:
-                aaa.add(a)
+def is_in(start, end, lis):
+    start_with = False
+    end_with = False
+    for lisi in lis:
+        if start_with:
+            break
+        for c in lisi:
+            if c.startswith(start):
+                start_with = True
                 break
-    bbb = set()
-    for a in prev:
-        for b in aaa:
-            if a[2:] == b[:2]:
-                bbb.add(b)
+    for lisi in lis:
+        if end_with:
+            break
+        for c in lisi:
+            if c.endswith(end):
+                end_with = True
                 break
-    return bbb
+    return start_with and end_with
+
+
+def narrow(lis, j):
+    new_cur = []
+    for i in lis[j]:
+        if is_in(i[:2], i[2:], lis):
+            new_cur.append(i)
+    lis[0] = new_cur
+    return lis
 
 
 def find_set(bound):
@@ -37,20 +50,14 @@ def find_set(bound):
     hepta = get_lis(bound, 5, 1, 6)
     octa = get_lis(bound, 6, 1, 7)
 
-    # triangle = narrow(triangle, octa, squares)
-    # squares = narrow(squares, triangle, penta)
-    # penta = narrow(penta, squares, hexa)
-    # hexa = narrow(hepta, penta, hepta)
-    # # hepta = narrow(hepta, hexa, octa)
-    # # octa = narrow(octa, hepta, triangle)
-    #
-    # print(triangle)
-    # print(squares)
-    # print(penta)
-    # print(hexa)
-    # print(hepta)
-    # print(octa)
-    # print(7480 + 4774 + 2147 +1521 + 5815 )
+    lis = [triangle, squares, penta, hexa, hepta, octa]
+    for i in range(6):
+        lis = narrow(lis, i)
+        print(lis[i])
+
+    # print(len(triangle), len(squares), len(penta), len(hexa), len(hepta), len(octa))
+
+    # print(8128 + 2882 + 8281 + 7326)
 
 
 find_set(10000)
