@@ -1,7 +1,6 @@
 """         problem 46           """
 
 import math
-import numpy as np
 
 
 def sieve_of_eranthoses(bound):

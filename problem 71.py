@@ -1,14 +1,14 @@
 import math
 
 
-def x(bound):
-    lis = [0.5]
-    for d in range(2, bound + 1):
-        for n in range(1, d):
-            if math.gcd(d, n) == 1:
-                lis.append(n / d)
-    lis.sort()
-    return lis[lis.index(3 / 7) - 1]
+def x():
+    lis = set()
+    for d in range(2, 12001):
+        for n in range(d // 3, d // 2 + 1):
+            if math.gcd(n, d) == 1:
+                lis.add(n / d)
+    lis = sorted(list(lis))
+    print(len(lis[lis.index(1 / 3):lis.index(1 / 2) - 1]))
 
 
-print(x(1000000))
+x()
