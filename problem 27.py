@@ -8,7 +8,7 @@ import math
 
 
 def sieve_of_eranthoses(bound):
-    primes = [0, 0, 0]
+    primes = [0, 0, 2]
     i = 3
     while i < bound:
         primes.append(i)
@@ -39,8 +39,8 @@ def primes(bound):
     for b in primes:
         for a in range(b):
             n = 0
-            while n + a < b:
-                c = n ** 2 + a * n + b
+            while n - a < b:
+                c = n ** 2 + a * n - b
                 if c not in primes:
                     break
                 max_num = n
@@ -50,5 +50,5 @@ def primes(bound):
     print(max_b, max_a, max_num)
 
 
-# primes(1000)
-print(len(set(sieve_of_eranthoses(1000))))
+primes(1000)
+# print(len(set(sieve_of_eranthoses(1000))))
