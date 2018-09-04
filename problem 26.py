@@ -28,5 +28,5 @@ def find_longest_recurring_cycle(bound):
     return cycles_num_list.index(max(cycles_num_list))
 
 
-print(find_longest_recurring_cycle(1000))
+# print(find_longest_recurring_cycle(1000))
 print(1/7)
