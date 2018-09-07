@@ -1,20 +1,20 @@
 """         problem 3           """
 
-def divide_or_return(num):
+
+def evenly_divisible(n, d):
+    return n % d == 0
+
 
 def get_prime_factors(num):
-    divisors = []
-    cur_factor = 2
-    cur_val = num
-
-    while cur_val > 1:
-        if current_unknown_factors_product % cur == 0:
-            current_unknown_factors_product /= cur
-            divisors.add(cur)
-
+    divisors = set()
+    factor = 2
+    cur = num
+    while cur > 1:
+        if evenly_divisible(cur, factor):
+            cur /= factor
+            divisors.add(factor)
         else:
-            cur += min(cur - 1, 2)
-
+            factor += min(factor - 1, 2)
     return divisors
 
 
