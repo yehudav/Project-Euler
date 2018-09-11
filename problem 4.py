@@ -1,40 +1,30 @@
 """         problem 4           """
 
 
-def is_palindrome(n):
-    num = str(n)
-    num_length = len(num)
-    mid = int(num_length / 2)
-
-    first_half = num[:mid]
-    second_half = num[mid:]
-    second_half = second_half[::-1]
-
-    if mid != num_length / 2:
-        second_half = second_half[:-1]
-
-    return first_half == second_half
-
-
 def find_max_palindrome_product(lower_bound, higher_bound):
-    palindromes = []
+    max_palindrome = 0
+    cur = higher_bound
+    while cur >= lower_bound:
+        cur_max_palindrome = cur_multiples_max_palindrome(cur, cur ** 2, cur * lower_bound)
+        max_palindrome = max(max_palindrome, cur_max_palindrome)
+        cur -= 1
+    return max_palindrome
 
-    current_number = higher_bound
 
-    while current_number >= lower_bound:
-        current_product = current_number * current_number
-        smallest_current_product = current_number * lower_bound
+def cur_multiples_max_palindrome(number, highest_multiple, lowest_multiple):
+    multiples_palindromes = [0]
+    current_multiple = highest_multiple
+    while current_multiple >= lowest_multiple:
+        if is_palindrome(current_multiple):
+            multiples_palindromes.append(current_multiple)
+        current_multiple -= number
+    return max(multiples_palindromes)
 
-        while current_product >= smallest_current_product:
-            if is_palindrome(current_product):
-                palindromes.append(current_product)
-            current_product -= current_number
 
-        current_number -= 1
-
-    return max(palindromes)
+def is_palindrome(n):
+    left_to_right = str(n)
+    right_to_left = left_to_right[::-1]
+    return left_to_right == right_to_left
 
 
 print(find_max_palindrome_product(100, 999))
-
-
