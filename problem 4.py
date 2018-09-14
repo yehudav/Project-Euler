@@ -12,13 +12,12 @@ def find_max_palindrome_product(lower_bound, higher_bound):
 
 
 def cur_multiples_max_palindrome(number, highest_multiple, lowest_multiple):
-    multiples_palindromes = [0]
     current_multiple = highest_multiple
     while current_multiple >= lowest_multiple:
         if is_palindrome(current_multiple):
-            multiples_palindromes.append(current_multiple)
+            return current_multiple
         current_multiple -= number
-    return max(multiples_palindromes)
+    return 0
 
 
 def is_palindrome(n):
@@ -28,3 +27,4 @@ def is_palindrome(n):
 
 
 print(find_max_palindrome_product(100, 999))
+
