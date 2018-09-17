@@ -7,7 +7,7 @@
 import math
 
 
-def sieve_of_eranthoses(bound):
+def sieve_of_eratosthenes(bound):
     primes = [0, 0, 2]
     i = 3
     while i < bound:
@@ -32,37 +32,27 @@ def remove_zeros(lis):
 
 
 def primes(bound):
-    primess = sieve_of_eranthoses(bound)
-    primes = remove_zeros(sieve_of_eranthoses(bound))
-    max_num = None
-    assssss = range(-999, 1000)
-    max_a = -2000
-    max_b = -2000
-    ass_new = set()
-    for b in primes:
-        for a in ass:
-            if  1+a+b <bound:
-                if primess[1 + a + b]!=0:
-                    ass_new.add(a)
-    aaaa = list(ass_new)
-    aaaa.sort()
-    print(aaaa)
-    print(len(ass_new))
-
-    #
-    #
-    #     for a in range(b):
-    #         n = 0
-    #         while n - a < b:
-    #             c = n ** 2 + a * n - b
-    #             if c not in primes:
-    #                 break
-    #             max_num = n
-    #             n += 1
-    #             max_a = a
-    #             max_b = b
-    # print(max_b, max_a, max_num)
+    primes = sieve_of_eratosthenes(10000000)
+    b_s = remove_zeros(sieve_of_eratosthenes(bound))
+    max_num = 0
+    a_s = range(1000)
+    max_a = 0
+    max_b = 0
+    for b in b_s:
+        for a in a_s:
+            n = 0
+            while True:
+                cur = n * (n - a) + b
+                if primes[abs(cur)] != 0:
+                    n += 1
+                else:
+                    break
+            if max_num < n - 1:
+                max_a = a
+                max_b = b
+    print(max_a, max_b)
+    return max_a * max_b
 
 
-primes(1000)
+print(primes(1000))
 # print(len(set(sieve_of_eranthoses(1000))))
