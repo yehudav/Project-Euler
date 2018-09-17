@@ -1,4 +1,3 @@
-"""         problem 26           """
 # for trail in digits:
 #     cur_recurring_num = recurring_cycle(trail)
 #
@@ -29,4 +28,4 @@ def find_longest_recurring_cycle(bound):
 
 
 # print(find_longest_recurring_cycle(1000))
-print(1/7)
+print(1 / 7)

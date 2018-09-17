@@ -1,7 +1,3 @@
-"""         problem 12           """
-
-
-
 import math
 
 

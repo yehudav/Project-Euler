@@ -1,5 +1,3 @@
-"""         problem 29           """
-
 distinct_numbers = []
 
 for i in range(99):

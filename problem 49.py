@@ -1,5 +1,3 @@
-"""         problem 49           """
-
 from theAlgo import algorithms as algo
 import itertools
 

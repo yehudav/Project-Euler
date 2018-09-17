@@ -1,5 +1,3 @@
-"""         problem 40           """
-
 fraction = ""
 
 for i in range(185185):

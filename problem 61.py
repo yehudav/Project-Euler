@@ -1,6 +1,3 @@
-"""         problem 61           """
-
-
 def get_lis(bound, jump, first, first_jump):
     lis = []
     low_bound = bound // 10

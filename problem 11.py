@@ -1,6 +1,3 @@
-"""         problem 11           """
-
-
 def max_of_three(a, b, c):
     return max(a, max(b, c))
 

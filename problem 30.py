@@ -1,6 +1,3 @@
-"""         problem 30           """
-
-
 def sum_of_power(n):
     powers_sum = 0
     num = n

@@ -1,6 +1,3 @@
-"""         problem 8           """
-
-
 def max_adjacent_digits_product(number, adjacent_digits_num):
     str_of_num = str(number)
     max_product = 0

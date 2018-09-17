@@ -1,6 +1,3 @@
-"""         problem 63           """
-
-
 def powes():
     sum = 0
     for i in range(4, 10):
@@ -11,5 +8,6 @@ def powes():
             j += 1
             k = k * i
     print(sum)
+
 
 powes()

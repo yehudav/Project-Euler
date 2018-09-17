@@ -1,8 +1,6 @@
-"""         problem 2           """
-
-
 def is_even(n):
     return n / 2 == n // 2
+
 
 def sum_of_even_fibonacci_numbers(bound, fn_minus_2, fn_minus_1):
     sum_of_even_numbers = 0
@@ -16,4 +14,3 @@ def sum_of_even_fibonacci_numbers(bound, fn_minus_2, fn_minus_1):
 
 
 print(sum_of_even_fibonacci_numbers(4000000, 0, 1))
-

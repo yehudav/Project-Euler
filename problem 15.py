@@ -1,7 +1,3 @@
-"""         problem 15           """
-
-
-
 def factorial(n):
     if n == 1:
         return 1
@@ -13,6 +9,3 @@ def choose(n, k):
 
 
 print(choose(40, 20))
-
-
-

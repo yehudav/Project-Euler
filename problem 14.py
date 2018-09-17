@@ -1,6 +1,3 @@
-"""         problem 14           """
-
-
 def chain_length(n):
     chain_len = 0
     m = n

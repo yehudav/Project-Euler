@@ -1,6 +1,3 @@
-"""         problem 301           """
-
-
 def calculate_nim_winnig_states(bound):
     count = 0
     for i in range(1, bound + 1):

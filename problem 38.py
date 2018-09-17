@@ -1,6 +1,3 @@
-"""         problem 38           """
-
-
 def is_pandigital(num):
     if len(num) != 9:
         return False

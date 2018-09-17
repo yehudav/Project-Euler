@@ -1,5 +1,3 @@
-"""         problem 205           """
-
 import itertools
 
 

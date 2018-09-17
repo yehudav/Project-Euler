@@ -1,5 +1,3 @@
-"""         problem 43           """
-
 import itertools
 
 a = list(map("".join, itertools.permutations("0123456789")))

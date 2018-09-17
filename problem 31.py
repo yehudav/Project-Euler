@@ -1,5 +1,3 @@
-"""         problem 31           """
-
 times = 0
 
 a = b = c = d = e = f = g = 200

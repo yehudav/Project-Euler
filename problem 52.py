@@ -1,4 +1,3 @@
-"""         problem 52           """
 
 
 def contains_the_same_digits(n):

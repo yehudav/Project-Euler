@@ -1,6 +1,3 @@
-"""         problem 1           """
-
-
 def arithmetic_series_sum(n):
     return (n * (n + 1)) // 2
 

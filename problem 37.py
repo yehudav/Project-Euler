@@ -1,5 +1,3 @@
-"""         problem 37           """
-
 import math
 
 lis = []

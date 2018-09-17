@@ -1,6 +1,3 @@
-"""         problem 10           """
-
-
 import math
 
 
@@ -35,12 +32,3 @@ def sieve_of_eratosthenes(bound, return_primes_only):
 
 
 print(sum(sieve_of_eratosthenes(2000000, False)))
-
-
-
-
-
-
-
-
-

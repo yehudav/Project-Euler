@@ -1,6 +1,3 @@
-"""         problem 33           """
-
-
 def remove_common_digit_frac(a, b):
     p = a[0]
     q = a[1]

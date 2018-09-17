@@ -1,5 +1,3 @@
-"""         problem 45           """
-
 triangle = []
 pentagonal = []
 hexagonal = []

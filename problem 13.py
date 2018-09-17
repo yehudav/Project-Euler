@@ -1,7 +1,3 @@
-"""         problem 13           """
-
-
-
 def find_sum_first_n_digits(path, first_digits_num):
     file = open(path)
     numbers_sum = 0

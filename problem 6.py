@@ -1,6 +1,3 @@
-"""         problem 6           """
-
-
 def sum_of_squares(n):
     return int((n * (n + 1)) * (2 * n + 1) / 6)
 

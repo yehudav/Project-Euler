@@ -1,6 +1,3 @@
-"""         problem 3           """
-
-
 def evenly_divisible(n, d):
     return n % d == 0
 

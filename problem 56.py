@@ -1,6 +1,3 @@
-"""         problem 56           """
-
-
 def digits_sum(n):
     n_sum = 0
     while len(n):

@@ -1,6 +1,3 @@
-"""         problem 23           """
-
-
 def div_sum(number):
     divs_sum = 0
     bound = number // 2 + 1

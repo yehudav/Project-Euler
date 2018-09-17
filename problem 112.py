@@ -1,6 +1,3 @@
-"""         problem 112           """
-
-
 def get_bouncy_percent_num(percent):
     cur_percent = 0
     bouncy_num = 0

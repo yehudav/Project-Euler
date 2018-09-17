@@ -1,5 +1,3 @@
-"""         problem 41           """
-
 import math
 
 

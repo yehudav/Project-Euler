@@ -1,6 +1,3 @@
-"""         problem 21           """
-
-
 def sum_of_divisors(num):
     bound = num // 2 + 1
     divisors_sum = 0

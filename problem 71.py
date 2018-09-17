@@ -8,7 +8,7 @@ def x(bound):
             if math.gcd(n, d) == 1:
                 lis.add(n / d)
     lis = sorted(list(lis))
-    print(lis.index(3 / 7) - 1) 
+    print(lis.index(3 / 7) - 1)
 
 
 x(10 ** 7)

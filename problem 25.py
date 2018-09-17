@@ -1,6 +1,3 @@
-"""         problem 25           """
-
-
 def n_digits_fibonacci(n):
     fn_minus_2 = 1
     fn_minus_1 = 1

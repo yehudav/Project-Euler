@@ -1,6 +1,3 @@
-"""         problem 81           """
-
-
 def load_matrix(path):
     matrix = []
     file = open(path, "r")

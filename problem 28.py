@@ -1,6 +1,3 @@
-"""         problem 28           """
-
-
 def diagonals_sum(bound):
     spiral_length = bound ** 2
     cur_num = 1

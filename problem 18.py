@@ -1,6 +1,3 @@
-"""         problem 18           """
-
-
 def create_matrix(path):
     file = open(path, "r")
 

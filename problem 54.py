@@ -1,6 +1,3 @@
-"""         problem 54           """
-
-
 class Hand:
     def __init__(self, description):
         self.hand = description
@@ -51,13 +48,14 @@ def player1_game_score(game):
 def decider(p1, p2):
     if royal(p1, p2):
         return 1 + sf(p1, p2) + four(p1, p2) + full(p1, p2) + flush(p1, p2) + straight(p1, p2) + \
-    three(p1, p2) + _2pair(p1, p2) + pair(p1, p2) + high(p1, p2)
+               three(p1, p2) + _2pair(p1, p2) + pair(p1, p2) + high(p1, p2)
 
 
 def draw(p1, p2):
     a = sorted(p1.get_values())
     b = sorted(p2.get_values())
     for i in range(le)
+
 
 def royal(p1, p2):
     is_royal_1 = p1.get_suites_num() == 1 and min(p1.get_values()) == 10 and p1.get_values_num() == 5

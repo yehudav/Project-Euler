@@ -1,6 +1,3 @@
-"""         problem 4           """
-
-
 def find_max_palindrome_product(lower_bound, higher_bound):
     max_palindrome = 0
     cur = higher_bound

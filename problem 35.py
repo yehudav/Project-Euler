@@ -1,5 +1,3 @@
-"""         problem 35           """
-
 import math
 
 

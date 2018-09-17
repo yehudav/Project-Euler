@@ -1,6 +1,3 @@
-"""         problem 5           """
-
-
 def min_product(bound):
     product = 1
     upper_bound = bound + 1

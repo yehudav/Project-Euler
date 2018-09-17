@@ -1,6 +1,3 @@
-"""         problem 16           """
-
-
 def find_digits_sum(base, exponent):
     power = str(base ** exponent)
     digits_sum = 0

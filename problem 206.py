@@ -1,5 +1,3 @@
-"""         problem 206           """
-
 import math
 
 
@@ -16,7 +14,7 @@ def find_sqr(format):
             print(int(math.sqrt(int(cur))))
             exit(0)
 
+
 print(find_sqr("1_2_3_4_5_6_7_8_9_0"))
 
-
-"""took 5 minutes - not good """#todo
+"""took 5 minutes - not good """  # todo
