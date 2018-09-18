@@ -1,7 +1,7 @@
 import math
 
 
-def sieve_of_eranthoses(bound):
+def sieve_of_eratosthenes(bound):
     primes = [0, 0, 0]
     i = 3
     while i < bound:
