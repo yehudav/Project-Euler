@@ -1,9 +1,13 @@
+def sum_of_squares_square_of_sum_difference(n):
+    return abs(sum_of_squares(n) - square_of_sum(n))
+
+
 def sum_of_squares(n):
-    return int((n * (n + 1)) * (2 * n + 1) / 6)
+    return (n * (n + 1)) * (2 * n + 1) // 6
 
 
 def square_of_sum(n):
-    return int(((n * (n + 1)) / 2)) ** 2
+    return ((n * (n + 1)) // 2) ** 2
 
 
-print(abs(sum_of_squares(100) - square_of_sum(100)))
+print(sum_of_squares_square_of_sum_difference(100))
