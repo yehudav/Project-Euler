@@ -17,6 +17,7 @@ def get_chain(n):
         s.add(cur)
         cur = div_sum(cur)
         i += 1
+    # s.remove(0)
     return s
 
 
@@ -25,7 +26,7 @@ def div_sum(n):
     for i in range(1, int(n / 2) + 1):
         if evenly_divisible(n, i):
             sum += i
-        return sum
+    return sum
 
 
 def evenly_divisible(n, i):
@@ -33,3 +34,7 @@ def evenly_divisible(n, i):
 
 
 print(longest_chain_min(1000000))
+
+# print(evenly_divisible(8, 2))
+# print(div_sum(12))
+# print(get_chain(4))

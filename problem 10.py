@@ -1,34 +1,34 @@
 import math
 
 
-def remove_zeros(list):
-    new_list = []
-
-    for num in list:
-        if num:
-            new_list.append(num)
-
-    return new_list
+def sum_of_primes(bound):
+    primes_sieve = sieve_of_eratosthenes(bound)
+    return sum(primes_sieve)
 
 
-def sieve_of_eratosthenes(bound, return_primes_only):
-    numbers = [0, 0]
-    max_factor = int(math.sqrt(bound))
-
-    for k in range(2, bound):
-        numbers.append(k)
-
-    for i in range(2, max_factor + 1):
-        if numbers[i]:
-            j = i * i
-            while j < bound:
-                numbers[j] = 0
-                j += i
-
-    if return_primes_only:
-        return remove_zeros(numbers)
-
-    return numbers
+def sieve_of_eratosthenes(bound):
+    numbers = set_sieve(bound)
+    primes = remove_non_primes(numbers)
+    return primes
 
 
-print(sum(sieve_of_eratosthenes(2000000, False)))
+def set_sieve(bound):
+    sieve = [0, 0]
+    for i in range(2, bound):
+        sieve.append(1)
+    return sieve
+
+
+def remove_non_primes(sieve):
+    bound = len(sieve)
+    multiples_bound = int(math.sqrt(bound)) + 1
+    for i in range(2, multiples_bound):
+        if sieve[i] != 0:
+            prime_multiply = i * i
+            while prime_multiply < bound:
+                sieve[prime_multiply] = 0
+                prime_multiply += i
+    return sieve
+
+
+print(sum_of_primes(2000000))
