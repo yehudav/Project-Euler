@@ -30,25 +30,30 @@ def remove_zeros(lis):
 
 
 def primes(bound):
-    primes = sieve_of_eratosthenes(10000000)
+    primes = sieve_of_eratosthenes(1000000)
     b_s = remove_zeros(sieve_of_eratosthenes(bound))
     max_num = 0
-    a_s = range(1000)
     max_a = 0
     max_b = 0
     for b in b_s:
-        for a in a_s:
-            n = 0
-            while True:
-                cur = n * (n - a) + b
+        if b > 1000:
+            break
+        for a in range(1000):
+            val = 0
+            for n in range(90000):
+                if  n + a ==b:
+                    break
+                cur = n * (n + a) + b
                 if primes[abs(cur)] != 0:
-                    n += 1
+                    val += 1
                 else:
                     break
-            if max_num < n - 1:
+            if val > max_num:
+                max_num = val
                 max_a = a
                 max_b = b
-    print(max_a, max_b)
+
+    print(max_a, max_b, max_num)
     return max_a * max_b
 
 
