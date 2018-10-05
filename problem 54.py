@@ -2,9 +2,36 @@ class Hand:
     def __init__(self, description):
         self.hand = description
         self.values = [self.val(i[0]) for i in description]
+        self.values.sort()
         self.different_values = len(set(self.values))
-        self.suits = [self.val(i[1]) for i in description]
+        self.suits = [i[1] for i in description]
         self.different_suits = len(set(self.suits))
+        self.valll = sorted(self.values) + [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        if self.different_values == 4:
+            self.valll[5] = 1
+        if self.different_values == 3:
+            if self.values.count(self.values[0]) == 3 or self.values.count(self.values[1]) == 3 or self.values.count(
+                    self.values[2]) == 3:
+                self.valll[7] = 1
+            else:
+                self.valll[6] = 1
+        if self.different_values == 3:
+            self.valll[6] = 1
+        if self.straight() and self.different_suits > 1:
+            self.valll[8] = 1
+        if self.different_suits == 1:
+            self.valll[9] = 1
+        if self.different_values == 2:
+            if self.values.count(self.values[0]) == 3 or self.values.count(self.values[1]) == 3 or self.values.count(
+                    self.values[2]) == 3:
+                self.valll[10] = 1
+            else:
+                self.valll[11] = 1
+        if self.straight() and self.different_suits == 1:
+            if self.values[0] == 10:
+                self.valll[13] = 1
+            else:
+                self.valll[12] = 1
 
     def get_values(self):
         return self.values
@@ -20,14 +47,20 @@ class Hand:
 
     def val(self, char):
         if char == "A":
-            return 13
+            return 14
         if char == "K":
-            return 12
+            return 13
         if char == "Q":
-            return 11
+            return 12
         if char == "J":
-            return 10
-        return int(char)
+            return 11
+        return 10
+
+    def straight(self):
+        for i in range(4):
+            if self.values[i] + 1 != self.values[i + 1]:
+                return format(False)
+        return True
 
 
 def poker(path):
@@ -42,30 +75,17 @@ def poker(path):
 def player1_game_score(game):
     p1 = Hand(game[:5])
     p2 = Hand(game[5:])
-    return decider(p1, p2)
+    return decider(p1.valll, p2.valll)
 
 
 def decider(p1, p2):
-    if royal(p1, p2):
-        return 1 + sf(p1, p2) + four(p1, p2) + full(p1, p2) + flush(p1, p2) + straight(p1, p2) + \
-               three(p1, p2) + _2pair(p1, p2) + pair(p1, p2) + high(p1, p2)
-
-
-def draw(p1, p2):
-    a = sorted(p1.get_values())
-    b = sorted(p2.get_values())
-    for i in range(le)
-
-
-def royal(p1, p2):
-    is_royal_1 = p1.get_suites_num() == 1 and min(p1.get_values()) == 10 and p1.get_values_num() == 5
-    is_royal_2 = p2.get_suites_num() == 1 and min(p2.get_values()) == 10 and p2.get_values_num() == 5
-    if is_royal_1 and is_royal_2:
-        return draw(p1, p2)
-    if is_royal_1 and not is_royal_2:
+    if p1 == []:
+        return 0
+    if p1[-1] > p2[-1]:
         return 1
-    if is_royal_1 and is_royal_2:
-        return draw(p1, p2)
+    if p1[-1] < p2[-1]:
+        return 0
+    return decider(p1[:-1], p2[:-1])
 
 
-poker()
+print(poker("C:\\Users\\YehudaVaknin\\PycharmProjects\\untitled1\\file"))

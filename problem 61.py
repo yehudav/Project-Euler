@@ -46,15 +46,47 @@ def find_set(bound):
     hexa = get_lis(bound, 4, 1, 5)
     hepta = get_lis(bound, 5, 1, 6)
     octa = get_lis(bound, 6, 1, 7)
+    x = triangle + squares + penta + hexa + hepta + octa
+    xx = [i[:2] for i in x]
+    xxx = [i[2:] for i in x]
+    xxxx = []
+    for i in x:
+        if i[:2] in xxx and i[2:] in xx:
+            xxxx.append(i)
 
-    lis = [triangle, squares, penta, hexa, hepta, octa]
-    for i in range(6):
-        lis = narrow(lis, i)
-        print(lis[i])
+    new_t = [i for i in triangle if i in xxxx]
+    new_s = [i for i in squares if i in xxxx]
+    new_p = [i for i in penta if i in xxxx]
+    new_h = [i for i in hexa if i in xxxx]
+    new_e = [i for i in hepta if i in xxxx]
+    new_o = [i for i in octa if i in xxxx]
 
-    # print(len(triangle), len(squares), len(penta), len(hexa), len(hepta), len(octa))
+    print(len(new_t), len(new_s), len(new_p), len(new_h), len(new_e), len(new_o))
+    print(len(triangle), len(squares), len(penta), len(hexa), len(hepta), len(octa))
 
-    # print(8128 + 2882 + 8281 + 7326)
+
+#
+# # lis = [triangle, squares, penta, hexa, hepta, octa]
+# # for i in range(6):
+# #     lis = narrow(lis, i)
+# #     print(lis[i])
+# #
+# # # print(len(triangle), len(squares), len(penta), len(hexa), len(hepta), len(octa))
+# #
+# # # print(8128 + 2882 + 8281 + 7326)
+#
+# for t in triangle:
+#     for s in squares:
+#         for p in penta:
+#             for h in hexa:
+#                 for e in hepta:
+#                     for o in octa:
+#                         if t[2:] == s[:2] and s[2:] == s[:2] and t[2:] == s[:2] and t[2:] == s[:2] and t[2:] == s[
+#                                                                                                                 :2] and t[
+#                                                                                                                         2:] == s[
+#                                                                                                                                :2]:
+#                             print(int(t) + int(s) + int(p) + int(h) + int(e) + int(o))
+#                             exit()
 
 
 find_set(10000)

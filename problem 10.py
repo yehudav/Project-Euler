@@ -1,34 +1,33 @@
 import math
 
 
-def sum_of_primes(bound):
-    primes_sieve = sieve_of_eratosthenes(bound)
-    return sum(primes_sieve)
+def sum_of_primes_below_bound(bound):
+    primes = sieve_of_eratosthenes(bound)
+    return sum(primes)
 
 
 def sieve_of_eratosthenes(bound):
-    numbers = set_sieve(bound)
-    primes = remove_non_primes(numbers)
-    return primes
+    sieve = create_sieve(bound)
+    sieved_primes = remove_non_primes(sieve)
+    return sieved_primes
 
 
-def set_sieve(bound):
-    sieve = [0, 0]
-    for i in range(2, bound):
-        sieve.append(1)
-    return sieve
+def create_sieve(bound):
+    numbers = [0, 0]
+    upper_bound = bound + 1
+    for num in range(2, upper_bound):
+        numbers.append(num)
+    return numbers
 
 
 def remove_non_primes(sieve):
     bound = len(sieve)
-    multiples_bound = int(math.sqrt(bound)) + 1
-    for i in range(2, multiples_bound):
-        if sieve[i] != 0:
-            prime_multiply = i * i
-            while prime_multiply < bound:
-                sieve[prime_multiply] = 0
-                prime_multiply += i
+    max_factor = int(math.sqrt(bound)) + 1
+    for i in range(2, max_factor):
+        if sieve[i]:
+            for j in range(i * i, bound, i):
+                sieve[j] = 0
     return sieve
 
 
-print(sum_of_primes(2000000))
+print(sum_of_primes_below_bound(2000000))
