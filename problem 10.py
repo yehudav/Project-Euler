@@ -24,7 +24,7 @@ def remove_non_primes(sieve):
     bound = len(sieve)
     max_factor = int(math.sqrt(bound)) + 1
     for i in range(2, max_factor):
-        if sieve[i]:
+        if sieve[i] != 0:
             for j in range(i * i, bound, i):
                 sieve[j] = 0
     return sieve

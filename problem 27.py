@@ -38,12 +38,12 @@ def primes(bound):
     for b in b_s:
         if b > 1000:
             break
-        for a in range(1000):
+        for a in range(b):
             val = 0
             for n in range(90000):
-                if  n + a ==b:
+                if n + a == b:
                     break
-                cur = n * (n + a) + b
+                cur = n * (n - a) + b
                 if primes[abs(cur)] != 0:
                     val += 1
                 else:

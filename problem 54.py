@@ -8,7 +8,7 @@ class Hand:
         self.different_suits = len(set(self.suits))
         self.valll = sorted(self.values) + [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         if self.different_values == 4:
-            self.valll[5] = 1
+            self.valll[5] =
         if self.different_values == 3:
             if self.values.count(self.values[0]) == 3 or self.values.count(self.values[1]) == 3 or self.values.count(
                     self.values[2]) == 3:
