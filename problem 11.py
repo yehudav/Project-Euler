@@ -2,8 +2,8 @@ class MatrixMaxProductFinder:
     def __init__(self, path, product_length):
         self.matrix = []
         self.create_matrix_from_file(path)
-        self.rows = len(self.matrix)
-        self.cols = len(self.matrix[0])
+        self.rows_num = len(self.matrix)
+        self.cols_num = len(self.matrix[0])
         self.product_len = product_length
         self.max_product = -float("inf")
 
@@ -15,29 +15,36 @@ class MatrixMaxProductFinder:
             self.matrix.append(int_line)
 
     def get_matrix_max_product(self):
-        self.square_matrix_max_adjacent_product()
+        self.matrix_max_product()
         return self.max_product
 
     def matrix_max_product(self):
-        self.max_product_of_rows = self.matrix_rows_max_product()
-        self.max_product_of_cols = self.matrix_cols_max_product()
-        self.max_product_of_diagonals = self.square_matrix_diagonals_max_product()
+        self.rows_max_product()
+        self.cols_max_product()
+        self.diagonals_max_product()
         return self.max_product
 
     def rows_max_product(self):
         for row in self.matrix:
-            max_rows_product = max(self.max_product, self.max_product(row))
+            self.line_max_product(row)
 
     def cols_max_product(self):
         for col in range(self.cols_num):
-            column = []
-            for row in self.matrix:
-                column.append(row[col])
-            self.max_product = max(self.max_product, self.max_product(column))
+            column = self.get_col(col)
+            self.line_max_product(column)
 
-    def down_left_diagonals_max_product(self):
+    def get_col(self, i):
+        col = []
+        for row in self.matrix:
+            col.append(row[i])
+        return col
 
-        for i in range(matrix_len - adjacent_digits_number + 1):
+    def diagonals_max_product(self):
+        self.down_right_diagonals_max_product()
+        self.up_right_diagonals_max_product()
+
+    def down_right_diagonals_max_product(self):
+        for i in range(self.rows_num - self.product_len + 1):
             k = i
             diagonal_a = []
             diagonal_b = []
@@ -51,7 +58,6 @@ class MatrixMaxProductFinder:
             b_product = max_product(diagonal_b, adjacent_digits_number)
 
             max_down_left_diagonals_product = max_of_three(max_down_left_diagonals_product, a_product, b_product)
-
 
     def up_right_diagonals_max_product(self):
         for i in range(matrix_len - adjacent_digits_number + 1):
@@ -71,24 +77,16 @@ class MatrixMaxProductFinder:
 
             max_up_right_diagonals_product = max_of_three(max_up_right_diagonals_product, a_product, b_product)
 
+    def line_max_product(self, line):
+        products = len(line) - self.product_len
+        for i in range(products):
+            self.max_product = max(self.max_product, self.line_product(line[i:i + self.product_len]))
 
-    def square_matrix_diagonals_max_product(self:
-        self.square_matrix_down_left_diagonals_max_product()
-        self.square_matrix_up_right_diagonals_max_product()
-
-
-    def max_product(self, line):
-        max_product_of_line = 0
-        while len(line) >= self.product_len:
-            current_product = 1
-            for i in range(self.product_len):
-                current_product *= line[i]
-            max_product_of_line = max(current_product, max_product_of_line)
-            line = line[1:]
-        return max_product_of_line
-
-    def max_of_three(a, b, c):
-        return max(a, max(b, c))
+    def line_product(self, adjacent_nums):
+        current_product = 1
+        for n in adjacent_nums:
+            current_product *= n
+        return current_product
 
 
 max_calculator = MatrixMaxProductFinder("C:\\Users\\YehudaVaknin\\PycharmProjects\\maini\\file", 4)
