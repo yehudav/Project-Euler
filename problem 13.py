@@ -1,4 +1,4 @@
-def find_first_n_digits_of_numbers_sum(path, first_digits_num):
+def get_first_n_digits_of_numbers_sum(path, first_digits_num):
     numbers_sum = get_nums_sum(path)
     return get_first_n_digits(numbers_sum, first_digits_num)
 
@@ -15,4 +15,4 @@ def get_first_n_digits(num, n):
     return str(num)[:n]
 
 
-print(find_first_n_digits_of_numbers_sum("file.txt", 10))
+print(get_first_n_digits_of_numbers_sum("C:\\Users\\YehudaVaknin\\PycharmProjects\\maini\\file", 10))
