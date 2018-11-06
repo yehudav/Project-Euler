@@ -1,11 +1,17 @@
-def find_digits_sum(base, exponent):
-    power = str(base ** exponent)
+def get_n_power_of_2_digits_sum(exponent):
+    n_power = get_n_power_of_2_digits(exponent)
+    return get_digits_sum(n_power)
+
+
+def get_n_power_of_2_digits(exponent):
+    return str(1 << exponent)
+
+
+def get_digits_sum(n):
     digits_sum = 0
-
-    for digit in power:
+    for digit in n:
         digits_sum += int(digit)
-
     return digits_sum
 
 
-print(find_digits_sum(2, 1000))
+print(get_n_power_of_2_digits_sum(1000))
