@@ -1,37 +1,34 @@
-class Foo:
-    def __init__(self, bound):
-        self.bound = bound + 1
-        self.max_head = 0
-        self.max_chain_length = 0
-        self.cur_head = 0
-        self.cur_num = 0
-        self.cur_chain_length = 0
-
-    def get_head_of_longest_chain_under_bound(self):
-        for i in range(self.bound):
-            self.cur_head = i
-            self.get_cur_chain_length()
-            self.update_max_length()
-        return self.max_head
-
-    def get_cur_chain_length(self):
-        self.cur_chain_length = 0
-        self.cur_num = self.cur_head
-        while self.cur_num > 1:
-            self.get_next_num_in_chain()
-            self.cur_chain_length += 1
-
-    def get_next_num_in_chain(self):
-        if self.cur_num != ((self.cur_num >> 1) << 1):
-            self.cur_num = self.cur_num << 1 + self.cur_num + 1
-        else:
-            self.cur_num = self.cur_num >> 1
-
-    def update_max_length(self):
-        if self.cur_chain_length > self.max_chain_length:
-            self.max_chain_length = self.cur_chain_length
-            self.max_head = self.cur_head
+def get_longest_chain_head_under_bound(bound):
+    lengths_by_indexes = get_chains_lengths(bound)
+    return get_longest_chain_head(lengths_by_indexes)
 
 
-f = Foo(1000000)
-print(f.get_head_of_longest_chain_under_bound())
+def get_chains_lengths(bound):
+    upper_bound = bound + 1
+    chains_lengths = []
+    for i in range(upper_bound):
+        chains_lengths.append(chain_length(i))
+    return chains_lengths
+
+
+def chain_length(head):
+    chain_len = 0
+    cur_num = head
+    while cur_num > 1:
+        cur_num = get_next_num_in_chain(cur_num)
+        chain_len += 1
+    return chain_len
+
+
+def get_next_num_in_chain(n):
+    if n != ((n >> 1) << 1):
+        return n + n + n + 1
+    else:
+        return n >> 1
+
+
+def get_longest_chain_head(chains_lengths):
+    return chains_lengths.index(max(chains_lengths))
+
+
+print(get_longest_chain_head_under_bound(1000000))
