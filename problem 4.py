@@ -1,19 +1,17 @@
-def find_max_palindrome_product(lower_bound, higher_bound):
-    max_palindrome = 0
-    cur = higher_bound
-    while cur >= lower_bound:
-        cur_palindrome = cur_multiples_max_palindrome(cur, cur ** 2, cur * lower_bound)
-        max_palindrome = max(max_palindrome, cur_palindrome)
-        cur -= 1
+def get_max_palindrome_product(lower_bound, higher_bound):
+    max_palindrome = -1
+    for i in range(higher_bound, lower_bound - 1, -1):
+        cur_max_palindrome = get_i_mults_max_palindrome_product(i, lower_bound * i)
+        max_palindrome = max(max_palindrome, cur_max_palindrome)
     return max_palindrome
 
 
-def cur_multiples_max_palindrome(number, highest_multiple, lowest_multiple):
-    current_multiple = highest_multiple
-    while current_multiple >= lowest_multiple:
-        if is_palindrome(current_multiple):
-            return current_multiple
-        current_multiple -= number
+def get_i_mults_max_palindrome_product(cur, lower_multiple):
+    higher_multiple = cur ** 2
+    while higher_multiple >= lower_multiple:
+        if is_palindrome(higher_multiple):
+            return higher_multiple
+        higher_multiple -= cur
     return 0
 
 
@@ -23,4 +21,4 @@ def is_palindrome(n):
     return left_to_right == right_to_left
 
 
-print(find_max_palindrome_product(100, 999))
+print(get_max_palindrome_product(100, 999))

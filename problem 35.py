@@ -33,7 +33,6 @@ for i in range(3, sqrt):
 
 pprimes = sorted(list(set(primes)))[2:]
 
-print("ttttttttttttttttt")
 
 counter = 0
 for p in pprimes:
