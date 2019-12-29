@@ -1,7 +1,7 @@
-def find_prime(index):
+def get_nth_prime(n):
     primes = [2]
     cur = 3
-    while len(primes) < index:
+    while len(primes) < n:
         if is_prime(cur, primes):
             primes.append(cur)
         cur += 2
@@ -15,4 +15,4 @@ def is_prime(num, primes):
     return True
 
 
-print(find_prime(10001))
+print(get_nth_prime(10001))
