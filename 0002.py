@@ -1,16 +1,11 @@
-def is_even(n):
-    return n / 2 == n // 2
+import util
 
 
-def sum_of_even_fibonacci_numbers(bound, fn_minus_2, fn_minus_1):
-    sum_of_even_numbers = 0
-    while fn_minus_2 < bound:
-        fn = fn_minus_1 + fn_minus_2
-        fn_minus_2 = fn_minus_1
-        fn_minus_1 = fn
-        if is_even(fn_minus_2):
-            sum_of_even_numbers += fn_minus_2
-    return sum_of_even_numbers
+def sum_of_even_fibonacci_numbers(bound):
+    fibonacci_sequence = util.get_fibonacci_sequence_until_value(bound)
+    return sum(i for i in fibonacci_sequence if util.is_even_num(i))
 
 
-print(sum_of_even_fibonacci_numbers(4000000, 0, 1))
+if __name__ == "__main__":
+    n = 4000000
+    print(sum_of_even_fibonacci_numbers(n))

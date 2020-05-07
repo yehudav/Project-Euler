@@ -1,20 +1,24 @@
-def sum_of_multiples(a, b, bound):
-    a_mult_sum = a * arithmetic_series_sum(multiples_num(bound, a))
-    b_mult_sum = b * arithmetic_series_sum(multiples_num(bound, b))
-    a_times_b_mult_sum = a * b * arithmetic_series_sum(multiples_num(bound, a * b))
-    return inclusion_exclusion(a_mult_sum, b_mult_sum, a_times_b_mult_sum)
+import util
 
 
-def arithmetic_series_sum(n):
-    return (n * (n + 1)) // 2
+def sum_of_multiples_of_two_nums_below_bound(a, b, bound):
+    a_sum, b_sum = sum_of_multiples_below_bound(a, bound), sum_of_multiples_below_bound(b, bound)
+    a_times_b_sum = sum_of_multiples_below_bound(a * b, bound)
+    return inclusion_exclusion(a_sum, b_sum, a_times_b_sum)
 
 
-def multiples_num(M, n):
-    return M // n
+def sum_of_multiples_below_bound(n, bound):
+    return n * util.get_arithmetic_series_sum(number_of_multiples_below_bound(n, bound))
+
+
+def number_of_multiples_below_bound(num, bound):
+    return bound // num
 
 
 def inclusion_exclusion(a, b, a_b_intersection):
     return a + b - a_b_intersection
 
 
-print(sum_of_multiples(3, 5, 999))
+if __name__ == "__main__":
+    a, b, bound = [3, 5, 999]
+    print(sum_of_multiples_of_two_nums_below_bound(a, b, bound))

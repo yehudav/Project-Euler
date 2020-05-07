@@ -1,27 +1,13 @@
-class MinProductFinder:
-    def __init__(self):
-        self.min_product = None
-        self.upper_bound = None
-        self.factors = None
-
-    def get_min_product(self, bound):
-        self.upper_bound = bound + 1
-        self.factors = []
-        self.min_product = 1
-        for j in range(2, self.upper_bound):
-            self.get_next_factor(j)
-        return self.min_product
-
-    def get_next_factor(self, n):
-        for i in self.factors:
-            if n % i == 0:
-                n //= i
-            if n == 1:
-                break
-        if n != 1:
-            self.factors.append(n)
-            self.min_product *= n
+import util
 
 
-min_product_finder = MinProductFinder()
-print(min_product_finder.get_min_product(20))
+def get_lcm_of_range_n(n):
+    cur_lcm = 1
+    for i in range(1, n + 1):
+        cur_lcm = i * cur_lcm // util.gcd(cur_lcm, i)
+    return cur_lcm
+
+
+if __name__ == "__main__":
+    n = 20
+    print(get_lcm_of_range_n(20))
