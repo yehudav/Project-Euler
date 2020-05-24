@@ -1,6 +1,10 @@
-def find_pythagorean_triple_with_given_sum_product(given_sum):
+import util
+
+
+# todo
+def get_product_of_pythagorean_triplet_with_given_sum_(given_sum):
     triplet = find_pythagorean_triple_with_given_sum(given_sum)
-    return triplet_product(triplet)
+    return util.get_iter_product(triplet)
 
 
 def find_pythagorean_triple_with_given_sum(given_sum):
@@ -13,11 +17,6 @@ def find_pythagorean_triple_with_given_sum(given_sum):
     exit(-1)
 
 
-def triplet_product(triplet):
-    product = 1
-    for i in triplet:
-        product *= i
-    return product
-
-
-print(find_pythagorean_triple_with_given_sum_product(1000))
+if __name__ == "__main__":
+    n = 1000
+    print(get_product_of_pythagorean_triplet_with_given_sum_(n))

@@ -54,5 +54,12 @@ def lcm(a, b):
     return abs(a * b) / gcd(a, b)
 
 
-def digits_product(n):
-    return reduce((lambda x, y: int(x) * int(y)), list(str(n)))
+def get_num_of_digits(n):
+    return len(str(n))
+
+
+def get_iter_product(n):
+    product = 1
+    for i in n:
+        product *= int(i)
+    return product
