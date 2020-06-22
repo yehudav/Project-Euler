@@ -1,7 +1,3 @@
-import math
-from functools import reduce
-
-
 def is_odd_num(n):
     return n & 1 == 1
 
@@ -58,8 +54,8 @@ def get_num_of_digits(n):
     return len(str(n))
 
 
-def get_iter_product(n):
+def get_iterable_product(iterable):
     product = 1
-    for i in n:
+    for i in iterable:
         product *= int(i)
     return product
