@@ -1,18 +1,11 @@
-def get_first_n_digits_of_numbers_sum(path, first_digits_num):
-    numbers_sum = get_nums_sum(path)
-    return get_first_n_digits(numbers_sum, first_digits_num)
-
-
-def get_nums_sum(path):
+def get_sum_first_n_digits(path, n_digits):
     file = open(path)
     nums_sum = 0
     for num in file:
         nums_sum += int(num)
-    return nums_sum
+    return str(nums_sum)[:n_digits]
 
 
-def get_first_n_digits(num, n):
-    return str(num)[:n]
-
-
-print(get_first_n_digits_of_numbers_sum("C:\\Users\\YehudaVaknin\\PycharmProjects\\maini\\file", 10))
+if __name__ == "__main__":
+    first_n_digits = 10
+    print(get_sum_first_n_digits("C:\\Users\\\yehud\\PycharmProjects\\muchwow\\file", first_n_digits))
