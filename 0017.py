@@ -5,6 +5,11 @@ singles = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine
 thousand = "onethousand"
 str = ""
 
+
+def get_num_of_letters_of_all_numbers_below(bound):  # todo refactor
+    pass
+
+
 for i in range(1, 1000):
     j = i % 100
 
@@ -19,12 +24,13 @@ for i in range(1, 1000):
             str += singles[(j % 10) - 1]
     elif j == 10:
         str += tens[0]
-    elif j > 10 and j < 20:
+    elif 10 < j < 20:
         str += teens[(j % 10) - 1]
     else:
         if j > 0:
             str += singles[j - 1]
 
 str += thousand
-
-print(len(str))
+if __name__ == "__main__":
+    print(len(str))
+    print(len(str) == 21124)

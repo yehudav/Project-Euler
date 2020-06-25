@@ -1,11 +1,4 @@
-def choose(n, k):
-    return factorial(n) // (factorial(k) * factorial(n - k))
+import util
 
-
-def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
-
-
-print(choose(40, 20))
+if __name__ == "__main__":
+    print(util.n_choose_k(40, 20))

@@ -1,13 +1,14 @@
 import math
+import util
 
-
+#todo
 def first_triangle_num_with_n_divisors(n, primes_bound):
     primes = get_primes(primes_bound)
     first_triangle = 0
     i = 1
 
     while first_triangle == 0:
-        current_triangle = triangle_num(i)
+        current_triangle = util.get_nth_triangle_num(i)
         if get_num_of_divisors(current_triangle, primes) > n:
             first_triangle = current_triangle
 
@@ -37,10 +38,6 @@ def is_prime(num, primes):
     return True
 
 
-def triangle_num(n):
-    return int((n * (n + 1)) / 2)
-
-
 def get_num_of_divisors(n, primes):
     divs = 1
     cur = n
@@ -64,4 +61,6 @@ def get_num_of_divisors(n, primes):
     return divs
 
 
-print(first_triangle_num_with_n_divisors(500, 500))
+if __name__ == "__main__":
+    print(first_triangle_num_with_n_divisors(500, 500))
+    print(first_triangle_num_with_n_divisors(500, 500) == 76576500)

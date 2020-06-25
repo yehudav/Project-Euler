@@ -1,19 +1,5 @@
-def factorial_digits_sum(num):
-    factorial_result = str(factorial(num))
-    return sum_of_digits(factorial_result)
+import util
 
-
-def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
-
-
-def sum_of_digits(n):
-    digits_sum = 0
-    for digit in n:
-        digits_sum += int(digit)
-    return digits_sum
-
-
-print(factorial_digits_sum(100))
+if __name__ == "__main__":
+    n = 100
+    print(util.get_iterable_sum(str(util.factorial(n))))

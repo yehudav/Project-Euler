@@ -1,17 +1,11 @@
-def get_n_power_of_2_digits_sum(exponent):
-    n_power = get_n_power_of_2_digits(exponent)
-    return get_digits_sum(n_power)
+import util
 
 
-def get_n_power_of_2_digits(exponent):
-    return str(1 << exponent)
+def get_digits_sum_of_nth_power(base, exponent):
+    return util.get_iterable_sum(str(base ** exponent))
 
 
-def get_digits_sum(n):
-    digits_sum = 0
-    for digit in n:
-        digits_sum += int(digit)
-    return digits_sum
-
-
-print(get_n_power_of_2_digits_sum(1000))
+if __name__ == "__main__":
+    base = 2
+    exponent = 1000
+    print(get_digits_sum_of_nth_power(base, exponent))

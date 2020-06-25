@@ -1,35 +1,22 @@
-def create_matrix(path):
-    file = open(path, "r")
-
-    matrix = []
-
-    for line in file:
-        line = (line[:-1]).split(" ")
-        new_line = []
-        for str in line:
-            new_line.append(int(str))
-        matrix.append(new_line)
-
-    return matrix
+def get_max_path_sum(path):
+    matrix = create_matrix_from_file(path)
+    for i in range(1, len(matrix)):
+        update_cur_row(matrix, i)
+    return max(matrix[- 1])
 
 
-def calculate_max_route_sum(path):
-    matrix = create_matrix(path)
-    cur_row = 0
-
-    for row in matrix:
-        if cur_row != 0:
-            for i in range(len(row)):
-                if i == 0:
-                    row[i] += matrix[cur_row - 1][0]
-                elif i == len(row) - 1:
-                    row[i] += matrix[cur_row - 1][len(row) - 2]
-                else:
-                    row[i] += max(matrix[cur_row - 1][i], matrix[cur_row - 1][i - 1])
-
-        cur_row += 1
-
-    return max(matrix[len(matrix) - 1])
+def update_cur_row(matrix, cur_row):
+    prev_row = cur_row - 1
+    matrix[cur_row][0] += matrix[prev_row][0]
+    matrix[cur_row][-1] += matrix[prev_row][- 1]
+    for i in range(1, len(matrix[cur_row]) - 1):
+        matrix[cur_row][i] += max(matrix[prev_row][i], matrix[prev_row][i - 1])
 
 
-print(calculate_max_route_sum("file.txt"))
+def create_matrix_from_file(path):
+    file = open(path)
+    return [[int(num) for num in line.split(" ")] for line in file]
+
+
+if __name__ == "__main__":
+    print(get_max_path_sum("file"))

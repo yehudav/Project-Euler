@@ -8,4 +8,4 @@ def get_sum_first_n_digits(path, n_digits):
 
 if __name__ == "__main__":
     first_n_digits = 10
-    print(get_sum_first_n_digits("C:\\Users\\\yehud\\PycharmProjects\\muchwow\\file", first_n_digits))
+    print(get_sum_first_n_digits("file", first_n_digits))

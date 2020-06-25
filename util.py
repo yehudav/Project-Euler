@@ -13,6 +13,19 @@ def is_divisible(n, d):
     return n % d == 0
 
 
+def n_choose_k(n, k):
+    return factorial(n) // (factorial(k) * factorial(n - k))
+
+
+def factorial(n):
+    if n < 0:
+        raise ValueError
+    mult = 1
+    for i in range(2, n + 1):
+        mult *= i
+    return mult
+
+
 def get_arithmetic_series_sum(n):
     return n * (n + 1) // 2
 
@@ -55,6 +68,13 @@ def lcm(a, b):
 
 def get_num_of_digits(n):
     return len(str(n))
+
+
+def get_iterable_sum(iterable):
+    sum = 0
+    for i in iterable:
+        sum += int(i)
+    return sum
 
 
 def get_iterable_product(iterable):
