@@ -1,15 +1,12 @@
 def amicable_numbers_sum(bound):
-    amicable_sum = 0
-    for cur in range(1, bound):
-        if is_amicable(cur):
-            amicable_sum += cur
-    return amicable_sum
-
-
-def is_amicable(n):
-    div_sum = sum_of_divisors(n)
-    n_tag = sum_of_divisors(div_sum)
-    return n_tag == n and n_tag != div_sum
+    dic = {i: sum_of_divisors(i) for i in range(bound)}
+    amic = set()
+    for i in range(bound):
+        if i not in amic:
+            if bound > dic[i] != i and dic[dic[i]] == i:
+                amic.add(i)
+                amic.add(dic[i])
+    return sum(amic)
 
 
 def sum_of_divisors(num):

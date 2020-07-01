@@ -1,4 +1,4 @@
-import util
+import euler_utils as eu
 
 
 def sum_of_multiples_of_two_nums_below_bound(a, b, bound):
@@ -8,7 +8,7 @@ def sum_of_multiples_of_two_nums_below_bound(a, b, bound):
 
 
 def sum_of_multiples_below_bound(n, bound):
-    return n * util.get_arithmetic_series_sum(number_of_multiples_below_bound(n, bound))
+    return n * eu.get_arithmetic_series_sum(number_of_multiples_below_bound(n, bound))
 
 
 def number_of_multiples_below_bound(num, bound):

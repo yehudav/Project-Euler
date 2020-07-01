@@ -1,9 +1,9 @@
-import util
+import euler_utils as eu
 
 
 def sum_of_even_fibonacci_numbers(bound):
-    fibonacci_sequence = util.get_fibonacci_sequence_until_value(bound)
-    return sum(i for i in fibonacci_sequence if util.is_even_num(i))
+    fibonacci_sequence = eu.get_fibonacci_sequence_until_value(bound)
+    return sum(i for i in fibonacci_sequence if eu.is_even_num(i))
 
 
 if __name__ == "__main__":

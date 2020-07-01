@@ -1,8 +1,8 @@
-import util
+import euler_utils as eu
 
 
 def get_digits_sum_of_nth_power(base, exponent):
-    return util.get_iterable_sum(str(base ** exponent))
+    return eu.get_iterable_sum(str(base ** exponent))
 
 
 if __name__ == "__main__":

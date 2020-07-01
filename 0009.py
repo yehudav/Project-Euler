@@ -1,10 +1,10 @@
-import util
+import euler_utils as eu
 import math
 
 
 def get_product_of_pythagorean_triplet_with_given_sum(given_sum):
     triplet = find_pythagorean_triple_with_given_sum(given_sum)
-    return util.get_iterable_product(triplet)
+    return eu.get_iterable_product(triplet)
 
 
 def find_pythagorean_triple_with_given_sum(given_sum):

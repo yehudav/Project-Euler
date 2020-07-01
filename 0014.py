@@ -1,4 +1,4 @@
-import util
+import euler_utils as eu
 
 
 class LongestCollatzSequence:
@@ -34,7 +34,7 @@ class LongestCollatzSequence:
         return self.dic[head]
 
     def get_next_num_in_chain(self, n):
-        if util.is_odd_num(n):
+        if eu.is_odd_num(n):
             return 3 * n + 1
         return n >> 1
 

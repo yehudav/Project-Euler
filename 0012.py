@@ -1,5 +1,5 @@
 import math
-import util
+import euler_utils as eu
 
 #todo
 def first_triangle_num_with_n_divisors(n, primes_bound):
@@ -8,7 +8,7 @@ def first_triangle_num_with_n_divisors(n, primes_bound):
     i = 1
 
     while first_triangle == 0:
-        current_triangle = util.get_nth_triangle_num(i)
+        current_triangle = eu.get_nth_triangle_num(i)
         if get_num_of_divisors(current_triangle, primes) > n:
             first_triangle = current_triangle
 

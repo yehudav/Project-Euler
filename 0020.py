@@ -1,5 +1,5 @@
-import util
+import euler_utils as eu
 
 if __name__ == "__main__":
     n = 100
-    print(util.get_iterable_sum(str(util.factorial(n))))
+    print(eu.get_iterable_sum(str(eu.factorial(n))))

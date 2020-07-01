@@ -1,5 +1,5 @@
 import math
-import util
+import euler_utils as eu
 
 
 def get_max_prime_factor(n):
@@ -8,7 +8,7 @@ def get_max_prime_factor(n):
     factor = 2
     cur = n
     while cur > 1:
-        if util.is_divisible(cur, factor):
+        if eu.is_divisible(cur, factor):
             cur //= factor
         else:
             factor += min(factor - 1, 2)

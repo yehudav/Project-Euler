@@ -1,12 +1,12 @@
-import util
+import euler_utils as eu
 
 
 def get_max_product_of_k_adjacent_digits(num, k):
     digits = str(num)
     num_of_digits = len(digits)
-    max_product = util.get_iterable_product(digits[:k])
+    max_product = eu.get_iterable_product(digits[:k])
     for i in range(1, num_of_digits - k + 1):
-        cur_product = util.get_iterable_product(digits[i:i + k])
+        cur_product = eu.get_iterable_product(digits[i:i + k])
         max_product = max(cur_product, max_product)
     return max_product
 

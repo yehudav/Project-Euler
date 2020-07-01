@@ -1,4 +1,4 @@
-import util
+import euler_utils as eu
 
 
 def get_max_palindrome_product(num_of_digits):
@@ -16,7 +16,7 @@ def get_min_and_max_nums_with_n_digits(n):
 
 def get_max_palindrome_product_of_i_in_range(i, lower_multiple, upper_multiple):
     while upper_multiple >= lower_multiple:
-        if util.is_string_palindrome(str(upper_multiple)):
+        if eu.is_string_palindrome(str(upper_multiple)):
             return upper_multiple
         upper_multiple -= i
     return -1

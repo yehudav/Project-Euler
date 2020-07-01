@@ -1,4 +1,4 @@
-import util
+import euler_utils as eu
 
 
 def get_nth_prime(n):
@@ -15,7 +15,7 @@ def get_nth_prime(n):
 
 def is_prime(num, primes):
     for prime in primes:
-        if util.is_divisible(num, prime):
+        if eu.is_divisible(num, prime):
             return False
     return True
 
