@@ -8,7 +8,7 @@ def longest_chain_min(bound):
             cur_min = min(chain)
     return cur_min
 
-
+# todo refactor
 def get_chain(n):
     i = 0
     s = set()

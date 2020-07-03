@@ -1,4 +1,4 @@
-def div_sum(number):
+def div_sum(number): #todo refactor
     divs_sum = 0
     bound = number // 2 + 1
 

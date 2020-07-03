@@ -10,7 +10,7 @@ def choose_bigger_than_val(bound, val):
 def n_choose_k(n, k):
     return factorial(n) / (factorial(k) * factorial(n - k))
 
-
+# todo refactor
 def factorial(n):
     if n == 1:
         return 1

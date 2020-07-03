@@ -13,7 +13,7 @@ def dec(path):
                 key = []
                 for p in range(len(nums) // 3 + 1):
                     key.append(i)
-                    key.append(j)
+                    key.append(j)# todo refactor
                     key.append(k)
                 if len(nums) % 3 == 1:
                     key.append(i)

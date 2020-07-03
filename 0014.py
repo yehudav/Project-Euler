@@ -18,7 +18,7 @@ class LongestCollatzSequence:
         for i in range(2, self.bound):
             self.calculate_chain_length(i)
 
-    def calculate_chain_length(self, head):#todo refactor
+    def calculate_chain_length(self, head):  # todo refactor
         chain = []
         cur = head
         while cur != 1:

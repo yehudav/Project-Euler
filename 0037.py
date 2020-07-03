@@ -10,7 +10,7 @@ for i in range(1000000):
         lis.append(0)
 
 sqr = int(math.sqrt(1000000) + 3)
-
+# todo refactor
 for i in range(3, sqr):
     j = lis[i]
     if j != 0:

@@ -15,7 +15,7 @@ for i in range(10000):
     pentagonals.append(cur)
     add += 3
     cur += add
-
+# todo refactor
 for pj in pentagonals:
     for pk in pentagonals:
         if pj == pk:

@@ -18,6 +18,8 @@ def sieve_of_eranthoses(bound):
     return primes
 
 
+# todo refactor
+
 def remove_zeros(lis):
     new_lis = []
     for i in lis:
@@ -35,7 +37,7 @@ def x(bound):
         for j in lis:
             if j > bb:
                 break
-            if i/ j != i//j:
+            if i / j != i // j:
                 flag = False
                 break
         if flag:

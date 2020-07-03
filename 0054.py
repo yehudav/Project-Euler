@@ -13,7 +13,7 @@ class Hand:
             if self.values.count(self.values[0]) == 3 or self.values.count(self.values[1]) == 3 or self.values.count(
                     self.values[2]) == 3:
                 self.valll[7] = 1
-            else:
+            else:# todo refactor
                 self.valll[6] = 1
         if self.different_values == 3:
             self.valll[6] = 1

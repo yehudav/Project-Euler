@@ -13,7 +13,7 @@ primes = []
 
 for p in range(10000000):
     primes.append(p)
-
+# todo refactor
 sqr = int(math.sqrt(10000000) + 3)
 for i in range(2, sqr):
     if primes[i] != 0:

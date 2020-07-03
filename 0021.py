@@ -1,4 +1,7 @@
-def amicable_numbers_sum(bound):
+import euler_utils as eu
+
+
+def amicable_numbers_sum(bound):  # todo refactor
     dic = {i: sum_of_divisors(i) for i in range(bound)}
     amic = set()
     for i in range(bound):
@@ -10,16 +13,9 @@ def amicable_numbers_sum(bound):
 
 
 def sum_of_divisors(num):
-    upper_bound = num // 2 + 1
-    divisors_sum = 0
-    for i in range(1, upper_bound):
-        if evenly_divisible(num, i):
-            divisors_sum += i
-    return divisors_sum
+    return sum(i for i in range(1, num // 2 + 1) if eu.is_divisible(num, i))
 
 
-def evenly_divisible(n, d):
-    return n / d == n // d
-
-
-print(amicable_numbers_sum(10000))
+if __name__ == "__main__":
+    print(amicable_numbers_sum(10000))
+    print(amicable_numbers_sum(10000) == 31626)

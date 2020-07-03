@@ -14,3 +14,4 @@ def not_div(n, d):
 
 
 print(num_of_integrs(1500000))
+# todo refactor

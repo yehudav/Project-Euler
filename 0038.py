@@ -10,7 +10,7 @@ def is_pandigital(num):
 lis = []
 for i in range(1, 10000):
     st = ""
-    a = i
+    a = i# todo refactor
     while len(st) < 9:
         st += str(a)
         a += i

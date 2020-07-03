@@ -1,5 +1,5 @@
 import itertools
-
+# todo refactor
 
 def find_i_permutation(elements, i):
     permutation_list = list(itertools.permutations(elements))

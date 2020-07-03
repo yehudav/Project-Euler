@@ -17,7 +17,7 @@ def get_sum(d):
     for c in st:
         sum += int(c)
     return sum
-
+# todo refactor
 
 getcontext().prec = 100
 

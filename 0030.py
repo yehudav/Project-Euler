@@ -1,4 +1,4 @@
-def sum_of_power(n):
+def sum_of_power(n):# todo refactor
     powers_sum = 0
     num = n
 

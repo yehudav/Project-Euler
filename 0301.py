@@ -13,3 +13,4 @@ def state(n):
 
 
 print(calculate_nim_winnig_states(2 ** 30))
+# todo refactor

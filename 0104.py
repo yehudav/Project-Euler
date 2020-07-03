@@ -6,6 +6,6 @@ def fib():
     n = 1474
     f2 = (1 / sq) * (((sq + 1) / 2) ** n - ((sq - 1) / 2) ** n)
     return f2
-
+# todo refactor
 
 print(fib())

@@ -2,7 +2,7 @@ def remove_common_digit_frac(a, b):
     p = a[0]
     q = a[1]
     r = b[0]
-    t = b[1]
+    t = b[1]# todo refactor
     if p == "0":
         p = "1"
     if q == "0":

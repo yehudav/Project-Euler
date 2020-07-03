@@ -4,3 +4,4 @@ def count_sum(n):
 def cuonti(bigger,smaller):
     if n == 1:
         return 1
+# todo refactor

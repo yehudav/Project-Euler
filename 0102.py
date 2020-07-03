@@ -7,7 +7,7 @@ def oa(x1, y1, x2, y2):
         return 1
     return 0
 
-
+# todo refactor
 def mi(path):
     file = open(path, "r")
     lis = []

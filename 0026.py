@@ -5,7 +5,7 @@
 #         max_recurring_cycle = cur_recurring_num
 #         d_index = digits.index(trail) + 1
 #
-# print(d_index)
+# print(d_index)# todo refactor
 
 
 def max_recurring_cycle(string):

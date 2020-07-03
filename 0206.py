@@ -13,7 +13,7 @@ def find_sqr(format):
                 cur[16] and format[18] == cur[18]:
             print(int(math.sqrt(int(cur))))
             exit(0)
-
+# todo refactor
 
 print(find_sqr("1_2_3_4_5_6_7_8_9_0"))
 

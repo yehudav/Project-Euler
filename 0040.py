@@ -12,3 +12,4 @@ d100000 = int(fraction[99999])
 d1000000 = int(fraction[999999])
 
 print(d1 * d10 * d100 * d1000 * d10000 * d100000 * d1000000)
+# todo refactor

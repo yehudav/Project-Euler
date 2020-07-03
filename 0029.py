@@ -1,4 +1,4 @@
-def get_distinct_powers_in_range(lower_bound, upper_bound):
+def get_distinct_powers_in_range(lower_bound, upper_bound):# todo refactor
     upper_bound = upper_bound + 1
     all_powers = get_all_powers(lower_bound, upper_bound)
     return get_distinct_powers_num(all_powers)

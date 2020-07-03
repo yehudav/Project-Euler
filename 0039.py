@@ -13,6 +13,6 @@ for s in range(1000):
             index = a + b + c
             if index <= 1000 and a * a + b * b == c * c:
                 maxi_list[index] += 1
-
+# todo refactor
 print(max(maxi_list))
 print(maxi_list.index(4))

@@ -16,6 +16,6 @@ def is_numerator_longer(dd, nn):
     if len(str(nn)) > len(str(dd)):
         return True
     return False
-
+# todo refactor
 
 print(square_root_longer_numerator(1000))

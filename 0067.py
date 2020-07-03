@@ -11,7 +11,7 @@ def create_matrix(path):
         matrix.append(new_line)
 
     return matrix
-
+# todo refactor
 
 def calculate_max_route_sum(path):
     matrix = create_matrix(path)

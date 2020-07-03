@@ -16,7 +16,7 @@ def is_in(start, end, lis):
     for lisi in lis:
         if start_with:
             break
-        for c in lisi:
+        for c in lisi:# todo refactor
             if c.startswith(start):
                 start_with = True
                 break

@@ -1,4 +1,4 @@
-def diagonals_sum(bound):
+def diagonals_sum(bound):# todo refactor
     spiral_length = bound ** 2
     cur_num = 1
     sum_of_diagonals = 1

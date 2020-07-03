@@ -14,5 +14,5 @@ for p in a:
 
     if int(a) == a and int(b) == b and int(c) == c and int(d) == d and int(e) == e and int(f) == f and int(g) == g:
         sum += int(p)
-
+# todo refactor
 print(sum)

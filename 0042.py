@@ -12,7 +12,7 @@ def char_value(c):
     index = characters.index(char)
     return numbers[index]
 
-
+# todo refactor
 def word_value(a_word):
     val = 0
 

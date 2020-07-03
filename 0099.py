@@ -10,7 +10,7 @@ def load_bases_and_exponents(path):
         bases_and_exps_pairs.append((int(base), int(exp), line_num))
         line_num += 1
     return bases_and_exps_pairs
-
+# todo refactor
 
 def decide(pair1, pair2):
     a, b = pair1[0], pair1[1]

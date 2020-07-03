@@ -9,7 +9,7 @@ def is_circ(num, liss):
         n = n[1:] + n[0]
         nn = int(n)
         if nn not in liss:
-            return False
+            return False# todo refactor
     return True
 
 

@@ -9,7 +9,7 @@ def is_palindrom(num):
 
 
 sum_of_palidroms = 0
-
+# todo refactor
 for i in range(1000000):
     decimal = str(i)
     binary = str(bin(i))[2:]

@@ -16,7 +16,7 @@ def sieve_of_eratosthenes(bound):
             k += j
     return primes
 
-
+# todo refactor
 def remove_zeros(lis):
     new_lis = []
     for i in lis:

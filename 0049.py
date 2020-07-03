@@ -11,7 +11,7 @@ primes_list = algo.sieve_of_eratosthenes(10000)
 aaaa = sorted(list(set(primes_list)))
 
 j = 0
-
+# todo refactor
 for i in aaaa:
     if i > 1000:
         j = aaaa.index(i)

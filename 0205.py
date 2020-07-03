@@ -10,7 +10,7 @@ def X_greater_than_Y(i_sided, i_dice_num, j_sided, j_dice_num):
 
 def calculate_random_variable(values_num, power):
     var = []
-
+# todo refactor
 
 def calculate_greater():
     return

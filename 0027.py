@@ -2,7 +2,7 @@
 # n + a < b   or  n - a < b
 
 
-import math
+import math # todo refactor
 
 
 def sieve_of_eratosthenes(bound):

@@ -11,7 +11,7 @@ def contains_the_same_digits(n):
     x4 = str(n + n + n + n)
     x5 = str(n + n + n + n + n)
     x6 = str(n + n + n + n + n + n)
-
+    # todo refactor
     for char in x2:
         if char not in digits:
             return False

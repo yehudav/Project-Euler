@@ -1,4 +1,4 @@
-def current_february_days(year):
+def current_february_days(year):# todo refactor
     if year % 4 == 0:
         if year % 100 != 0 or year % 400 == 0:
             return 1

@@ -13,7 +13,7 @@ for i in range(80000 - 165):
 
     if num in hexagonal:
         pentagonal.append(num)
-
+# todo refactor
 for i in range(80000 - 285):
     n = i + 286
     num = int((n * (n + 1)) / 2)

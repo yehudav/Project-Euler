@@ -8,7 +8,7 @@ def e_convergent(n):
         f = n + fractions.Fraction(n, f)
         e = e + 1 / f
         print(f)
-
+# todo refactor
 
 def digits_sum(n):
     s = str(n)

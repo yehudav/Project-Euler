@@ -11,7 +11,7 @@ def count_sums(bound):
     for p in primes:
         a = p ** 2
         b = p ** 3
-        c = p ** 4
+        c = p ** 4# todo refactor
         sqrs.append(a)
         cubes.append(b)
         fourths.append(c)

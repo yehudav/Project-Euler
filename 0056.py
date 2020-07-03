@@ -14,7 +14,7 @@ def power(x, y):
 
     if y & 1 == 0:
         return d * d
-
+    # todo refactor
     else:
         return x * d * d
 

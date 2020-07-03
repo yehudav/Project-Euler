@@ -7,7 +7,7 @@ def load_matrix(path):
         matrix.append(row)
     print(matrix)
     return matrix
-
+# todo refactor
 
 def two_way_minimal_path_sum(path):
     matrix = load_matrix(path)

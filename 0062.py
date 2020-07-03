@@ -17,7 +17,7 @@ def co(n):
     for c in s:
         lisi[int(c)] += 1
     return lisi
-
+# todo refactor
 
 lis = get_cubes(30000 ** 3)
 new_lis = []

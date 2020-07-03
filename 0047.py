@@ -15,7 +15,7 @@ def sieve_of_eranthoses(bound):
             primes[k] = 0
             k += j
     return primes
-
+# todo refactor
 
 def remove_zeros(lis):
     new_lis = []

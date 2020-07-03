@@ -15,6 +15,6 @@ def x(bound):
                 val = v
                 enu = n
     return enu
-
+# todo refactor
 
 print(x(1000000))

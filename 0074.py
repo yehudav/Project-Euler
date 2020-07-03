@@ -14,7 +14,7 @@ def is_chain_60(n):
             return 0
     return 1
 
-
+# todo refactor
 def get_next(n):
     s = str(n)
     num = 0
