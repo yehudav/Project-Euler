@@ -1,5 +1,5 @@
-def diagonals_sum(bound):# todo refactor
-    spiral_length = bound ** 2
+def get_spiral_diagonals_sum(diagonal_len):  # todo refactor
+    spiral_length = diagonal_len ** 2
     cur_num = 1
     sum_of_diagonals = 1
     jump = 2
@@ -12,4 +12,7 @@ def diagonals_sum(bound):# todo refactor
     return sum_of_diagonals
 
 
-print(diagonals_sum(1001))
+if __name__ == "__main__":
+    n = 1001
+    print(get_spiral_diagonals_sum(n))
+    print(get_spiral_diagonals_sum(n) == 669171001)

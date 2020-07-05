@@ -1,4 +1,5 @@
-def sum_of_power(n):# todo refactor
+def get_sum_of_digits_nth_powers(n):  # todo refactor
+
     powers_sum = 0
     num = n
 
@@ -8,16 +9,19 @@ def sum_of_power(n):# todo refactor
 
     return powers_sum
 
+    numbers = []
 
-numbers = []
+    for i in range(2, 1000000):
+        if i == sum_of_power(i):
+            numbers.append(i)
 
-for i in range(2, 1000000):
-    if i == sum_of_power(i):
-        numbers.append(i)
+    sum_of_nums = 0
 
-sum_of_nums = 0
+    for i in numbers:
+        sum_of_nums += i
 
-for i in numbers:
-    sum_of_nums += i
 
-print(sum_of_nums)
+if __name__ == "__main__":
+    n = 5
+    print(get_sum_of_digits_nth_powers(n))
+    print(get_sum_of_digits_nth_powers(n) == 443839)

@@ -1,4 +1,4 @@
-times = 0# todo refactor
+times = 0  # todo refactor
 
 a = b = c = d = e = f = g = 200
 
@@ -24,4 +24,5 @@ while a >= 0:
                             g -= 2
 
                             times += 1
-print(times)
+if __name__ == "__main__":
+    print(times)
