@@ -1,15 +1,5 @@
-def load_matrix(path):
-    matrix = []
-    file = open(path, "r")
-    for line in file:
-        row = line.split(",")
-        row = [int(i) for i in row]
-        matrix.append(row)
-    print(matrix)
-    return matrix
-# todo refactor
+def find_two_way_minimal_path_sum(path):  # todo refactor
 
-def two_way_minimal_path_sum(path):
     matrix = load_matrix(path)
     length = len(matrix[0])
     for j in range(1, length):
@@ -22,7 +12,15 @@ def two_way_minimal_path_sum(path):
             matrix[i][j] += min(matrix[i][j - 1], matrix[i - 1][j])
             matrix[j][i] += min(matrix[j][i - 1], matrix[j - 1][i])
         i += 1
-    return matrix[length - 1][length - 1]
+    return matrix[- 1][- 1]
 
 
-print(two_way_minimal_path_sum("C:\\Users\\YehudaVaknin\\PycharmProjects\\untitled1\\file"))
+def load_matrix(path):
+    file = open(path)
+    return [[int(i) for i in line.split(",")] for line in file]
+
+
+if __name__ == "__main__":
+    path = "C:\\Users\\yehud\\PycharmProjects\\muchwow\\file"
+    print(find_two_way_minimal_path_sum(path))
+    print(find_two_way_minimal_path_sum(path) == 427337)

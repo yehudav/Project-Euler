@@ -2,7 +2,7 @@ def remove_common_digit_frac(a, b):
     p = a[0]
     q = a[1]
     r = b[0]
-    t = b[1]# todo refactor
+    t = b[1]  # todo refactor
     if p == "0":
         p = "1"
     if q == "0":
@@ -25,9 +25,16 @@ def remove_common_digit_frac(a, b):
 fracs = []
 
 for i in range(10, 100):
-    for j in range(10, 100):
+    for j in range(10, i):
         a = str(i)
         b = str(j)
         new_frac = remove_common_digit_frac(a, b)
         if new_frac == i / j and i % 10 != 0 and j % 10 != 0 and i / j < 1:
             print(i, j)
+
+
+def get_product_of_four_digit_cancelling_fractions():
+
+# if __name__ == "__main__":
+#     print(get_product_of_four_digit_cancelling_fractions())
+#     print(get_product_of_four_digit_cancelling_fractions() == )

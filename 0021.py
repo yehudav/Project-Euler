@@ -1,21 +1,18 @@
+import math
 import euler_utils as eu
 
 
-def amicable_numbers_sum(bound):  # todo refactor
-    dic = {i: sum_of_divisors(i) for i in range(bound)}
-    amic = set()
-    for i in range(bound):
-        if i not in amic:
-            if bound > dic[i] != i and dic[dic[i]] == i:
-                amic.add(i)
-                amic.add(dic[i])
-    return sum(amic)
+def get_sum_of_all_amicable_nums_below_bound(bound):
+    dic = {i: get_sum_of_divisors(i) for i in range(bound)}
+    return sum(i for i in range(bound) if bound > dic[i] != i and dic[dic[i]] == i)
 
 
-def sum_of_divisors(num):
-    return sum(i for i in range(1, num // 2 + 1) if eu.is_divisible(num, i))
+def get_sum_of_divisors(num):
+    num_sqrt = math.ceil(math.sqrt(num)) + 1
+    div_sum = sum(i + num // i for i in range(1, num_sqrt) if eu.is_divisible(num, i))
+    return div_sum - num
 
 
 if __name__ == "__main__":
-    print(amicable_numbers_sum(10000))
-    print(amicable_numbers_sum(10000) == 31626)
+    n = 10000
+    print(get_sum_of_all_amicable_nums_below_bound(n))
