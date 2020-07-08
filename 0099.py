@@ -2,7 +2,7 @@ import math
 
 
 def load_bases_and_exponents(path):
-    file = open(path, "r")
+    file = open(path)
     bases_and_exps_pairs = []
     line_num = 1
     for pair in file:
@@ -36,4 +36,4 @@ def get_max_numeric_line_num(path):
     return max_base[2]
 
 
-print(get_max_numeric_line_num("C:\\Users\\YehudaVaknin\\PycharmProjects\\untitled1\\file"))
+print(get_max_numeric_line_num("C:\\Users\\yehud\\PycharmProjects\\muchwow\\file"))

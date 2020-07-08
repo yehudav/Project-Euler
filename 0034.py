@@ -1,29 +1,17 @@
-def factorial(n):
-    if n == 0:
-        return 1
-    return n * factorial(n - 1)
-# todo refactor
-
-def sum_of_factorial(n):
-    factorial_sum = 0
-    num = n
-
-    while num > 0:
-        factorial_sum += factorial(num % 10)
-        num = int(num / 10)
-
-    return factorial_sum
+import euler_utils as eu
 
 
-numbers = []
+def get_sum_of_nums_equal_to_sum_of_digits_factorial():
+    factorions = []
+    for i in range(3, eu.factorial(9)):
+        if i == get_sum_of_digits_factorial(i):
+            factorions.append(get_sum_of_digits_factorial(i))
+    return sum(factorions)
 
-for i in range(100000):
-    if i == sum_of_factorial(i):
-        numbers.append(i)
 
-factorial_sum = 0
+def get_sum_of_digits_factorial(n):
+    return sum(eu.factorial(int(d)) for d in str(n))
 
-for i in numbers:
-    factorial_sum += i
 
-print(factorial_sum - 3)
+if __name__ == "__main__":
+    print(get_sum_of_nums_equal_to_sum_of_digits_factorial())

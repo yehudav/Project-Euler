@@ -1,42 +1,27 @@
-import math
+import euler_utils as eu
 
 
-def is_circ(num, liss):
-    n = str(num)
-    if "2" in n or "4" in n or "6" in n or "8" in n or "0" in n:
-        return False
-    for i in range(len(n)):
-        n = n[1:] + n[0]
-        nn = int(n)
-        if nn not in liss:
-            return False# todo refactor
+def get_num_of_circular_primes_below_bound(n):
+    primes = eu.sieve_of_eratosthenes(n)
+    primes_set = {str(i) for i in primes if i != 0}
+    return sum(1 for i in primes_set if is_circular_prime(i, primes_set))
+
+
+def is_circular_prime(num, primes):
+    if int(num) < 10:
+        return True
+    for digit in num:
+        if int(digit) % 2 == 0:
+            return False
+
+    for i in range(len(num)):
+        n = num[1:] + num[0]
+        if n not in primes:
+            return False  # todo refactor
     return True
 
 
-primes = []
-
-for i in range(1000000):
-    if i == 0 or i == 2:
-        primes.append(i)
-    elif i / 2 == int(i / 2):
-        primes.append(0)
-    else:
-        primes.append(i)
-
-sqrt = int(math.sqrt(1000000)) + 1
-
-for i in range(3, sqrt):
-    k = i + i
-    while k < 1000000:
-        primes[k] = 0
-        k += i
-
-pprimes = sorted(list(set(primes)))[2:]
-
-
-counter = 0
-for p in pprimes:
-    if is_circ(p, pprimes):
-        counter += 1
-
-print(counter + 1)
+if __name__ == "__main__":
+    n = 1000000
+    print(get_num_of_circular_primes_below_bound(n))
+    print(get_num_of_circular_primes_below_bound(n) == 55)

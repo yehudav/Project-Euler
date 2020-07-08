@@ -1,15 +1,24 @@
-fraction = ""
+def get_champernowne_constant_n_digits_product(indices):
+    champernowne_constant = create_n_digits_champernowne_constant(max(indices))
+    product = 1
+    for i in indices:
+        product *= int(champernowne_constant[i])
+    return product
 
-for i in range(185185):
-    fraction += str(i + 1)
 
-d1 = int(fraction[0])
-d10 = int(fraction[9])
-d100 = int(fraction[99])
-d1000 = int(fraction[999])
-d10000 = int(fraction[9999])
-d100000 = int(fraction[99999])
-d1000000 = int(fraction[999999])
+def create_n_digits_champernowne_constant(n):
+    num = ["."]
+    cur_len = 0
+    cur_num = 1
+    while cur_len < n:
+        num.append(str(cur_num))
+        cur_len += len(str(cur_num))
+        cur_num += 1
+    return "".join(num)
 
-print(d1 * d10 * d100 * d1000 * d10000 * d100000 * d1000000)
+
+if __name__ == "__main__":
+    indices = [1, 10, 100, 1000, 10000, 100000, 1000000]
+    print(get_champernowne_constant_n_digits_product(indices))
+    print(get_champernowne_constant_n_digits_product(indices) == 210)
 # todo refactor
