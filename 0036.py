@@ -1,20 +1,14 @@
-import math
+import euler_utils as eu
+
+
+def get_sum_of_decimal_and_binary_palindromes_below_bound(bound):
+    return sum(i for i in range(bound) if is_palindrom(i) and is_palindrom(bin(i)[2:]))
 
 
 def is_palindrom(num):
-    middle = math.floor(len(num))
-    first_half = num[:middle:1]
-    second_half = num[middle + 1::-1]
-    return first_half == second_half
+    return eu.is_string_palindrome(str(num))
 
 
-sum_of_palidroms = 0
-# todo refactor
-for i in range(1000000):
-    decimal = str(i)
-    binary = str(bin(i))[2:]
-
-    if is_palindrom(decimal) and is_palindrom(binary):
-        sum_of_palidroms += i
-
-print(sum_of_palidroms)
+if __name__ == "__main__":
+    n = 1000000
+    print(get_sum_of_decimal_and_binary_palindromes_below_bound(n))

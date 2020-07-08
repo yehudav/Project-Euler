@@ -20,4 +20,3 @@ def is_pandigital(num):
 
 if __name__ == "__main__":
     print(get_max_n_digit_pandigital_prime())
-    print(get_max_n_digit_pandigital_prime() == 7652413)
