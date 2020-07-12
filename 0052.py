@@ -1,42 +1,29 @@
+import math
 
 
-def contains_the_same_digits(n):
-    digits = []
+def get_smallest_num_where_x_2x_3x_4x_5x_6x_contain_same_digits():
+    a, b = 10, 100
+    result = -1
+    while result == -1:
+        result = check_range_for_result(range(a, math.ceil(b / 6)))
+        a, b = b, b * 10
+    return result
 
-    for char in str(n):
-        digits.append(char)
 
-    x2 = str(n + n)
-    x3 = str(n + n + n)
-    x4 = str(n + n + n + n)
-    x5 = str(n + n + n + n + n)
-    x6 = str(n + n + n + n + n + n)
-    # todo refactor
-    for char in x2:
-        if char not in digits:
-            return False
-    for char in x3:
-        if char not in digits:
-            return False
-    for char in x4:
-        if char not in digits:
-            return False
-    for char in x5:
-        if char not in digits:
-            return False
-    for char in x6:
-        if char not in digits:
+def check_range_for_result(cur_range):
+    for i in cur_range:
+        if are_x_2x_3x_4x_5x_6x_contain_same_digits(i):
+            return i
+    return -1
+
+
+def are_x_2x_3x_4x_5x_6x_contain_same_digits(i):
+    digits = set(str(i))
+    for j in range(2, 7):
+        if digits != set(str(i * j)):
             return False
     return True
 
 
-j = 1
-num = 0
-
-while True:
-    if contains_the_same_digits(j):
-        num = j
-        break
-    j += 1
-
-print(num)
+if __name__ == "__main__":
+    print(get_smallest_num_where_x_2x_3x_4x_5x_6x_contain_same_digits())

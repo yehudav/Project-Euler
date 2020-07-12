@@ -1,40 +1,29 @@
-def remove_common_digit_frac(a, b):
-    p = a[0]
-    q = a[1]
-    r = b[0]
-    t = b[1]  # todo refactor
-    if p == "0":
-        p = "1"
-    if q == "0":
-        q = "1"
-    if r == "0":
-        r = "1"
-    if t == "0":
-        t = "1"
-
-    if p == r:
-        return int(q) / int(t)
-    if p == t:
-        return int(q) / int(r)
-    if q == r:
-        return int(p) / int(t)
-    if q == t:
-        return int(p) / int(r)
+from fractions import *
 
 
-fracs = []
-
-for i in range(10, 100):
-    for j in range(10, i):
-        a = str(i)
-        b = str(j)
-        new_frac = remove_common_digit_frac(a, b)
-        if new_frac == i / j and i % 10 != 0 and j % 10 != 0 and i / j < 1:
-            print(i, j)
+def get_denominator_of_four_digit_cancelling_fractions_product():
+    result = Fraction(1, 1)
+    for denominator in range(10, 100):
+        for numerator in range(10, denominator):
+            if is_digit_cancelling_fraction(numerator, denominator):
+                result *= Fraction(numerator, denominator)
+    return result
 
 
-def get_product_of_four_digit_cancelling_fractions():
+def is_digit_cancelling_fraction(numerator, denominator):#todo refactor
+    shared_digit = None
+    for i in str(numerator):
+        for j in str(denominator):
+            if i == j:
+                shared_digit = i
+                break
+    if shared_digit is None:
+        return False
+    reduced_numerator = str(numerator).replace(shared_digit, "")
+    reduced_denominator = str(denominator).replace(shared_digit, "")
+    return Fraction(numerator, denominator) == Fraction(int(reduced_numerator), int(reduced_denominator
+                                                                                    ))
 
-# if __name__ == "__main__":
-#     print(get_product_of_four_digit_cancelling_fractions())
-#     print(get_product_of_four_digit_cancelling_fractions() == )
+if __name__ == "__main__":
+    print(get_denominator_of_four_digit_cancelling_fractions_product())
+    # print(get_denominator_of_four_digit_cancelling_fractions_product() == 100)

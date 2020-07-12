@@ -56,6 +56,13 @@ def get_fibonacci_sequence_until_value(n):
     return fibonacci_sequence
 
 
+def generate_fibonacci_sequence_and_index():
+    a, b, index = 0, 1, 1
+    while True:
+        yield a, index
+        a, b, index = b, a + b, index + 1
+
+
 def gcd(a, b):
     if b == 0:
         return a
@@ -111,3 +118,10 @@ def remove_non_primes(sieve):
 
 def get_nth_triangle_num(n):
     return get_arithmetic_series_sum(n)
+
+
+def get_triangle_nums_sequence_until_value(n):
+    triangle_nums = list(range(1, n + 1))
+    for i in range(1, len(triangle_nums)):
+        triangle_nums[i] += triangle_nums[i - 1]
+    return triangle_nums

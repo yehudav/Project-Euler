@@ -1,50 +1,24 @@
-characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-              'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+import euler_utils as eu
+import math
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-           20, 21, 22, 23, 24, 25, 26]
-
-path = "C:\\Users\\YehudaVaknin\\Desktop\\p042_words.txt"
-
-
-def char_value(c):
-    char = c.lower()
-    index = characters.index(char)
-    return numbers[index]
-
-# todo refactor
-def word_value(a_word):
-    val = 0
-
-    for char in a_word:
-        val += char_value(char)
-
-    return val
+"""
+triangle num t_n = n(n+1)/2 -> 2*t_n / n ~= n + 1 
+hence given a value x, we know at what n we get t_n > x
+"""
 
 
-def triangle(n):
-    return int((n * (n + 1)) / 2)
+def get_num_of_triangle_words(path):
+    file = open(path)
+    words_values = [get_word_value(word) for line in file for word in line.split(",")]
+    max_triangle_num = math.ceil(math.sqrt(max(words_values) * 2))
+    triangle_numbers = set(eu.get_triangle_nums_sequence_until_value(max_triangle_num))
+    return sum(1 for i in words_values if i in triangle_numbers)
 
 
-triangles = []
+def get_word_value(word):
+    return sum(ord(c) - ord('a') + 1 for c in word.lower() if c != '"')
 
-for i in range(45):
-    triangles.append(triangle(i + 1))
 
-file = open(path, "r")
-
-words = []
-
-for line in file:
-    line = line.split(',')
-
-    for word in line:
-        words.append(word[1:-1])
-
-triangles_sum = 0
-
-for i in words:
-    if word_value(i) in triangles:
-        triangles_sum += 1
-
-print(triangles_sum)
+if __name__ == "__main__":
+    path = "file"
+    print(get_num_of_triangle_words(path))
