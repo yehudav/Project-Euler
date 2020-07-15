@@ -1,37 +1,5 @@
-# import itertools
-#
-# a = list(map("".join, itertools.permutations("0123456789")))
-#
-# sum = 0
-# for p in a:
-#     a = int(p[1:4]) / 2
-#     b = int(p[2:5]) / 3
-#     c = int(p[3:6]) / 5
-#     d = int(p[4:7]) / 7
-#     e = int(p[5:8]) / 11
-#     f = int(p[6:9]) / 13
-#     g = int(p[7:10]) / 17
-#
-#     if int(a) == a and int(b) == b and int(c) == c and int(d) == d and int(e) == e and int(f) == f and int(g) == g:
-#         sum += int(p)
-# # todo refactor
-# print(sum)
-#
-# a = {s for s in range(2, 1000, 2)}
-# b = {s for s in range(3, 1000, 3)}
-# c = {s for s in range(5, 1000, 5)}
-# d = {s for s in range(7, 1000, 7)}
-# e = {s for s in range(11, 1000, 11)}
-# f = {s for s in range(13, 1000, 13)}
-# g = {s for s in range(17, 1000, 17)}
-# print(a)
-# print(b)
-# print(c)
-# print(d)
-# print(e)
-# print(f)
-# print(g)
 
+# # todo refactor
 
 """
 constraints - using rules of divisibility
@@ -53,26 +21,16 @@ constraints - using rules of divisibility
 
 
 def get_sum_of_0_to_9_pandigital_with_sub_string_divisibility():
-    aa = [str(i) for i in range(12, 1000, 2) if len(str(i)) == len(set(str(i)))]
-    bb = [str(i) for i in range(12, 1000, 3) if len(str(i)) == len(set(str(i)))]
-    cc = [str(i) for i in range(15, 1000, 5) if len(str(i)) == len(set(str(i)))]
-    dd = [str(i) for i in range(14, 1000, 7) if len(str(i)) == len(set(str(i)))]
-    ee = [str(i) for i in range(11, 1000, 11) if len(str(i)) == len(set(str(i)))]
-    ff = [str(i) for i in range(13, 1000, 13) if len(str(i)) == len(set(str(i)))]
-    gg = [str(i) for i in range(17, 1000, 17) if len(str(i)) == len(set(str(i)))]
+    d2d3d4 = [str(i) if i >= 100 else '0' + str(i) for i in range(12, 1000, 2) if len(str(i)) == len(set(str(i)))]
+    d2d3d4d5 = [i + str(d) for i in d2d3d4 for d in range(0, 10) if int(i[-2:] + str(d)) % 3 == 0]
+    d2d3d4d5d6 = [i + str(d) for i in d2d3d4d5 for d in range(0, 10) if int(i[-2:] + str(d)) % 5 == 0]
+    d2d3d4d5d6d7 = [i + str(d) for i in d2d3d4d5d6 for d in range(0, 10) if int(i[-2:] + str(d)) % 7 == 0]
+    d2d3d4d5d6d7d8 = [i + str(d) for i in d2d3d4d5d6d7 for d in range(0, 10) if int(i[-2:] + str(d)) % 11 == 0]
+    d2d3d4d5d6d7d8d9 = [i + str(d) for i in d2d3d4d5d6d7d8 for d in range(0, 10) if int(i[-2:] + str(d)) % 13 == 0]
+    d2d3d4d5d6d7d8d9d10 = [i + str(d) for i in d2d3d4d5d6d7d8d9 for d in range(0, 10) if int(i[-2:] + str(d)) % 17 == 0]
 
-    a = [i + j[-1] for i in aa for j in bb if i[-2:] == j[:-1]]
-
-    print(a)
-    print(len(a))
-    # print(b)
-    # print(c)
-    # print(d)
-    # print(e)
-    # print(f)
-    # print(g)
-    # print(len(a) + len(b) + len(c) + len(d) + len(e) + len(f) + len(g))
-
+    print(d2d3d4d5d6d7d8d9d10)
+    print(len(d2d3d4d5d6d7d8d9d10))
 
 if __name__ == "__main__":
-    print(get_sum_of_0_to_9_pandigital_with_sub_string_divisibility())
+    get_sum_of_0_to_9_pandigital_with_sub_string_divisibility()

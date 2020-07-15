@@ -1,51 +1,32 @@
-def sum_of_all_positive_nums_that_are_not_the_sum_of_two_abundant_numbers():
-    return sum(i for i in range(1, 28124) if is_not_sum_of_two_abundant(i))
+import euler_utils as eu
+
+import math
 
 
-def is_not_sum_of_two_abundant(i):
-    abundant_numbers_list = get_abundant_num_list(bound)
-
-    abundant_numbers_sum_list = list(sums_of_abundant_numbers(abundant_numbers_list))
-
-    for num in abundant_numbers_sum_list:
-        if num < bound:
-            non_abundant_sum -= num
-
-    return non_abundant_sum
+def get_sum_of_nums_that_are_not_sum_of_two_abundant_numbers():
+    abundant_nums = set(get_abundant_numbers_below_value(28124))
+    range_of = range(1, 28124)
+    return sum(i for i in range_of if not is_sum_of_2_abundant_nums(i, abundant_nums))
 
 
-def div_sum(number):  # todo refactor
-    divs_sum = 0
-    bound = number // 2 + 1
-
-    for i in range(1, bound):
-        if number % i == 0:
-            divs_sum += i
-
-    return divs_sum
+def get_abundant_numbers_below_value(n):
+    return [i for i in range(1, n) if is_abundant_number(i)]
 
 
-def get_abundant_num_list(bound):
-    j = 12
-    abundant_numbers = []
-
-    while j < bound:
-        if div_sum(j) > j:
-            abundant_numbers.append(j)
-
-        j += 1
-    return abundant_numbers
+def is_abundant_number(n):
+    divisors_range = range(1, math.ceil(math.sqrt(n)) )
+    divisors_sum = sum(i + n // i for i in divisors_range if eu.is_divisible(n, i)) - n
+    return divisors_sum > n
 
 
-def sums_of_abundant_numbers(abundant_numbers):
-    sums_set = set()
-    for num_a in abundant_numbers:
-        for num_b in abundant_numbers:
-            sums_set.add(num_a + num_b)
-
-    return sums_set
+def is_sum_of_2_abundant_nums(n, abundant_numbers):
+    for i in abundant_numbers:
+        if n - i in abundant_numbers:
+            return True
+    return False
 
 
 if __name__ == "__main__":
-    print(sum_of_all_positive_nums_that_are_not_the_sum_of_two_abundant_numbers())
-    print(sum_of_all_positive_nums_that_are_not_the_sum_of_two_abundant_numbers() == 4179871)
+    print(get_sum_of_nums_that_are_not_sum_of_two_abundant_numbers())
+    print(get_sum_of_nums_that_are_not_sum_of_two_abundant_numbers() == 4179871)
+# todo

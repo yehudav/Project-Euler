@@ -1,20 +1,10 @@
+import euler_utils as eu
+
+
 def choose_bigger_than_val(bound, val):
-    num = 0
-    for n in range(1, bound + 1):
-        for i in range(1, n):
-            if n_choose_k(n, i) > val:
-                num += 1
-    return num
+    ns = range(1, bound + 1)
+    return sum(1 for n in ns for k in range(1, n) if eu.n_choose_k(n, k) > val)
 
 
-def n_choose_k(n, k):
-    return factorial(n) / (factorial(k) * factorial(n - k))
-
-# todo refactor
-def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
-
-
-print(choose_bigger_than_val(100, 1000000))
+if __name__ == "__main__":
+    print(choose_bigger_than_val(100, 1000000))

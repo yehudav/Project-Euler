@@ -1,16 +1,14 @@
-hundreds = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-teens = ["eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-tens = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-singles = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-thousand = "onethousand"
-str = ""
+def get_num_of_letters_of_all_numbers_up_to_1000():
+    dic = get_len_of_numbers_up_to_1000()
+    return sum(get_number_len(i, dic) for i in range(1, 1001))
 
 
-def get_num_of_letters_of_all_numbers_below(bound):  # todo refactor
-    pass
+def get_number_len(i, dic): # todo refactor
+    length = 0
+    for
+        if i in dic:
+            return dic[i]
 
-
-for i in range(1, 1000):
     j = i % 100
 
     if i > 99:
@@ -30,7 +28,16 @@ for i in range(1, 1000):
         if j > 0:
             str += singles[j - 1]
 
-str += thousand
+
+def get_len_of_numbers_up_to_1000():
+    return {1: len("one"), 2: len("two"), 3: len("three"), 4: len("four"), 5: len("five"), 6: len("six"),
+            7: len("seven"), 8: len("eight"), 9: len("nine"), 10: len("ten"), 11: len("eleven"), 12: len("twelve"),
+            13: len("thirteen"), 14: len("fourteen"), 15: len("fifteen"), 16: len("sixteen"), 17: len("seventeen"),
+            18: len("eighteen"), 19: len("nineteen"), 20: len("twenty"), 30: len("thirty"), 40: len("forty"),
+            50: len("fifty"), 60: len("sixty"), 70: len("seventy"), 80: len("eighty"), 90: len("ninety"),
+            100: len("hundred"), 1000: len("thousand")}
+
+
 if __name__ == "__main__":
-    print(len(str))
-    print(len(str) == 21124)
+    print(get_num_of_letters_of_all_numbers_up_to_1000())
+    print(get_num_of_letters_of_all_numbers_up_to_1000() == 21124)

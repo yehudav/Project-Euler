@@ -7,7 +7,7 @@ def is_pentagonal(x):
 
 
 pentagonals = []
-D = 5000
+D = 100000000
 add = 1
 cur = 1
 

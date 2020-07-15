@@ -1,24 +1,34 @@
-triangle = []
-pentagonal = []
-hexagonal = []
+import math
 
-for i in range(80000 - 143):
-    n = i + 144
+"""
+Every hexagonal number is a triangular number - no need to check if triangular
+"""
 
-    hexagonal.append(int((n * (2 * n - 1))))
 
-for i in range(80000 - 165):
-    n = i + 166
-    num = int((n * (3 * n - 1)) / 2)
+def get_nth_num_that_is_triangular_pentagonal_and_hexagonal(n):
+    res = 0
+    hex_gen = generate_hexagonal_nums()
+    while n > 0:
+        cur_hex = hex_gen.__next__()
+        if is_pentagonal(cur_hex):
+            res = cur_hex
+            n -= 1
+    return res
 
-    if num in hexagonal:
-        pentagonal.append(num)
-# todo refactor
-for i in range(80000 - 285):
-    n = i + 286
-    num = int((n * (n + 1)) / 2)
 
-    if num in pentagonal:
-        triangle.append(num)
+def generate_hexagonal_nums():
+    cur = 1
+    add = 5
+    while True:
+        yield cur
+        cur += add
+        add += 4
 
-print(triangle)
+
+def is_pentagonal(i):
+    return ((math.sqrt(24 * i + 1) + 1) / 6) % 1 == 0
+
+
+if __name__ == "__main__":
+    n = 3  # 1, 40755 are both triangular, pentagonal and hexagonal
+    print(get_nth_num_that_is_triangular_pentagonal_and_hexagonal(3))
