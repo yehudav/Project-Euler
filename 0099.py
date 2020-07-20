@@ -1,6 +1,15 @@
 import math
 
 
+def get_max_numeric_line_num(path):
+    bases = load_bases_and_exponents(path)
+    max_base = bases[0]
+    for pair in bases:
+        if get_max_base(max_base, pair):
+            max_base = pair
+    return max_base[2]
+
+
 def load_bases_and_exponents(path):
     file = open(path)
     bases_and_exps_pairs = []
@@ -10,6 +19,8 @@ def load_bases_and_exponents(path):
         bases_and_exps_pairs.append((int(base), int(exp), line_num))
         line_num += 1
     return bases_and_exps_pairs
+
+
 # todo refactor
 
 def decide(pair1, pair2):
@@ -27,13 +38,7 @@ def get_max_base(pair1, pair2):
     return decide(pair1, pair2)
 
 
-def get_max_numeric_line_num(path):
-    bases = load_bases_and_exponents(path)
-    max_base = bases[0]
-    for pair in bases:
-        if get_max_base(max_base, pair):
-            max_base = pair
-    return max_base[2]
-
-
-print(get_max_numeric_line_num("C:\\Users\\yehud\\PycharmProjects\\muchwow\\file"))
+if __name__ == "__main__":
+    path = "C:\\Users\\yehud\\PycharmProjects\\muchwow\\file"
+    print(get_max_numeric_line_num(path))
+    print(get_max_numeric_line_num(path) == 709)

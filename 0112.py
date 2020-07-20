@@ -9,6 +9,7 @@ def get_bouncy_percent_num(percent):
         cur_percent = get_cur_percent(i, bouncy_num)
     return i
 
+
 # todo refactor
 def is_bouncy(n):
     return not is_dec(n) and not is_inc(n)
@@ -31,8 +32,7 @@ def is_inc(n):
 
 
 def get_cur_percent(number, bouncy_number):
-    ratio = bouncy_number / (number)
-    return ratio
+    return bouncy_number / number
 
 
 print(get_bouncy_percent_num(0.99))
