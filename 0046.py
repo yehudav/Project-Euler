@@ -1,63 +1,14 @@
+import euler_utils as eu
 import math
 
 
-def sieve_of_eratosthenes(bound):
-    primes = [0, 0, 0]
-    i = 3
-    while i < bound:
-        primes.append(i)
-        primes.append(0)
-        i += 2
-
-    for j in range(3, int(math.sqrt(bound))):
-        k = j + j
-        while k < bound:
-            primes[k] = 0
-            k += j
-    return primes
-
-# todo refactor
-def remove_zeros(lis):
-    new_lis = []
-    for i in lis:
-        if i != 0:
-            new_lis.append(i)
-    return new_lis
+def get_smallest_odd_composite_that_is_not_the_sum_of_prime_and_twice_a_square(bound):
+    primes = [i for i in eu.sieve_of_eratosthenes(bound) if i != 0]
+    double_squares = [2 * i ** 2 for i in range(math.ceil(math.sqrt(bound / 2)))]
+    odd_composites = {i + j for i in primes for j in double_squares}
+    return min(i for i in range(3, bound, 2) if i not in odd_composites)
 
 
-def get_odd_composites(bound, primes):
-    lis = []
-    i = 9
-    while i <= bound:
-        if primes[i] != i:
-            lis.append(i)
-        i += 2
-    return lis
-
-
-def get_squares(bound):
-    lis = []
-    for i in range(1, bound // 2 + 2):
-        lis.append(2 * i ** 2)
-    return lis
-
-
-def min_odd_composite_counter(bound):
-    primes_list = sieve_of_eranthoses(bound)
-    odd_composits_list = get_odd_composites(bound, primes_list)
-    primes_list = remove_zeros(primes_list)
-    squars_list = get_squares(bound)
-
-    options_lis = []
-    for sqr in squars_list:
-        for p in primes_list:
-            options_lis.append(p + sqr)
-    options_lis = sorted(list(set(options_lis)))
-
-    for o in odd_composits_list:
-        if o not in options_lis:
-            return o
-    return "ohhh bound not big enough"
-
-
-print(min_odd_composite_counter(5778))
+if __name__ == "__main__":
+    bound = 10000
+    print(get_smallest_odd_composite_that_is_not_the_sum_of_prime_and_twice_a_square(bound))

@@ -7,9 +7,9 @@ def find_sqr(format):
     print(upper_sqr - lower_sqr)
     for i in range(lower_sqr, upper_sqr):
         cur = str(i ** 2)
-        if format[0] == cur[0] and format[2] == cur[2] and format[4] == cur[4] and format[6] == cur[6] and format[8] == \
-                cur[8] and format[10] == cur[10] and format[12] == cur[12] and format[14] == cur[14] and format[16] == \
-                cur[16] and format[18] == cur[18]:
+        if format[18] == cur[18] and format[16] == cur[16] and format[14] == cur[14] and format[12] == cur[12] and \
+                format[10] == cur[10] and format[8] == cur[8] and format[6] == cur[6] and format[4] == cur[4] and \
+                format[2] == cur[2] and format[0] == cur[0]:
             print(int(math.sqrt(int(cur))))
             exit(0)
 

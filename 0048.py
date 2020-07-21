@@ -1,21 +1,8 @@
-def power(x, y):
-    if y == 0:
-        return 1
+def last_n_digits_of_i_pow_i_sequence(bound, n):
+    return str(sum(i ** i for i in range(1, bound + 1)))[-n:]
 
-    d = power(x, y >> 1)
 
-    if y & 1 == 0:
-        return d * d
-
-    else:
-        return x * d * d
-
-# todo refactor
-power_sum = 0
-
-for i in range(1, 1001):
-    power_sum += power(i, i)
-
-digits = str(power_sum)
-
-print(digits[2991:])
+if __name__ == "__main__":
+    bound = 1000
+    last_n_digits = 10
+    print(last_n_digits_of_i_pow_i_sequence(bound, last_n_digits))
