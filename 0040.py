@@ -1,15 +1,14 @@
+import euler_utils as eu
+
+
 def get_champernowne_constant_n_digits_product(indices):
     champernowne_constant = create_n_digits_champernowne_constant(max(indices))
-    product = 1
-    for i in indices:
-        product *= int(champernowne_constant[i])
-    return product
+    return eu.get_iterable_product([int(champernowne_constant[i]) for i in indices])
 
 
 def create_n_digits_champernowne_constant(n):
     num = ["."]
-    cur_len = 0
-    cur_num = 1
+    cur_len, cur_num = 0, 1
     while cur_len < n:
         num.append(str(cur_num))
         cur_len += len(str(cur_num))

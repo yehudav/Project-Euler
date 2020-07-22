@@ -1,7 +1,5 @@
 import euler_utils as eu
 
-import math
-
 
 def get_sum_of_nums_that_are_not_sum_of_two_abundant_numbers():
     abundant_nums = set(get_abundant_numbers_below_value(28124))
@@ -14,8 +12,8 @@ def get_abundant_numbers_below_value(n):
 
 
 def is_abundant_number(n):
-    divisors_range = range(1, math.ceil(math.sqrt(n)) )
-    divisors_sum = sum(i + n // i for i in divisors_range if eu.is_divisible(n, i)) - n
+    divisors_range = range(2, n // 2 + 1)
+    divisors_sum = sum(i for i in divisors_range if eu.is_divisible(n, i)) + 1
     return divisors_sum > n
 
 
@@ -28,5 +26,3 @@ def is_sum_of_2_abundant_nums(n, abundant_numbers):
 
 if __name__ == "__main__":
     print(get_sum_of_nums_that_are_not_sum_of_two_abundant_numbers())
-    print(get_sum_of_nums_that_are_not_sum_of_two_abundant_numbers() == 4179871)
-# todo

@@ -1,28 +1,8 @@
 import math
 
 
-def sieve_of_eranthoses(bound):
-    primes = [0, 0, 2]
-    i = 3
-    while i < bound:
-        primes.append(i)
-        primes.append(0)
-        i += 2
-
-    for j in range(3, int(math.sqrt(bound))):
-        k = j + j
-        while k < bound:
-            primes[k] = 0
-            k += j
-    return primes
-# todo refactor
-
-def remove_zeros(lis):
-    new_lis = []
-    for i in lis:
-        if i != 0:
-            new_lis.append(i)
-    return new_lis
+def get_n_consecutive_nums_with_distinct_primes_factors(n):
+    pass
 
 
 def gett(n, primes):
@@ -50,4 +30,5 @@ def x(bound):
         i += 1
 
 
-x(10000)
+if __name__ == "__main__":
+    print(get_n_consecutive_nums_with_distinct_primes_factors(4))  # todo refactor
