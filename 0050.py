@@ -10,15 +10,13 @@ def get_longest_consecutive_prime_sum(primes_in_order):
     primes = set(primes_in_order)
     sums = [(i, 0) for i in primes_in_order]
     for i in range(1, len(sums)):
-        sums[i][0] += sums[i - 1][0]
-        sums[i][1] += i
+        sums[i] = sums[i][0] + sums[i - 1][0], sums[i][1] + i
     max_p, max_l = 2, 0
     while True:
         for i in sums:
             if i[0] in primes and i[1] > max_l:
                 max_p = i[0]
                 max_l = i[1]
-
 
     max_prime, max_len = 2, 1
     while primes_in_order is not []:

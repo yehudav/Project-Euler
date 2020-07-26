@@ -1,4 +1,4 @@
-from theAlgo import algorithms as algo
+import euler_utils as e
 import itertools
 
 
@@ -6,7 +6,7 @@ def permutations_of(num):
     return list(map("".join, itertools.permutations(num)))
 
 
-primes_list = algo.sieve_of_eratosthenes(10000)
+primes_list = e.sieve_of_eratosthenes(10000)
 
 aaaa = sorted(list(set(primes_list)))
 

@@ -1,8 +1,8 @@
 import math
-
+import euler_utils as eu
 
 def get_n_consecutive_nums_with_distinct_primes_factors(n):
-    pass
+    return x(n)
 
 
 def gett(n, primes):
@@ -18,7 +18,7 @@ def gett(n, primes):
 
 
 def x(bound):
-    prims = remove_zeros(sieve_of_eranthoses(bound))
+    prims = [i for i in eu.sieve_of_eratosthenes(bound) if i !=0]
     i = 3 * 5 * 7 * 11 - 1
     last = 0
     while True:
