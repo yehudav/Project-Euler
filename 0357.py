@@ -17,10 +17,12 @@ def get_sum_of_prime_generating_integers_below_n(n):
     return sum(i for i in range(2, 100000001, 4) if is_prime_generating(i, primes)) + 1
 
 
-def is_prime_generating(n, p):
-    for d in range(1, math.ceil(math.sqrt(n))):
+def is_prime_generating(n, primes):
+    if n + 1 not in primes:
+        return False
+    for d in range(2, math.ceil(math.sqrt(n))):
         d_tag = n // d
-        if n % d == 0 and (d + d_tag not in p or d_tag + n // d_tag not in p):
+        if n % d == 0 and (d + d_tag not in primes or d_tag + n // d_tag not in primes):
             return False
     return True
 
