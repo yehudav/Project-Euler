@@ -1,11 +1,11 @@
 import math
 
 
-def is_odd_num(n):
+def is_odd(n):
     return n & 1 == 1
 
 
-def is_even_num(n):
+def is_even(n):
     return n & 1 == 0
 
 
@@ -55,12 +55,6 @@ def get_fibonacci_sequence_until_value(n):
         f1, f0 = f1 + f0, f1
     return fibonacci_sequence
 
-
-def generate_fibonacci_sequence_and_index():
-    a, b, index = 0, 1, 1
-    while True:
-        yield a, index
-        a, b, index = b, a + b, index + 1
 
 
 def gcd(a, b):
@@ -125,3 +119,27 @@ def get_triangle_nums_sequence_until_value(n):
     for i in range(1, len(triangle_nums)):
         triangle_nums[i] += triangle_nums[i - 1]
     return triangle_nums
+
+
+def get_num_of_divisors(n):#todo
+    primes_range = range(3, math.ceil(math.sqrt(n)) + 1)
+    primes_pows = []  # [get_factor_power(n, i) + 1 for i in primes_range if get_factor_power(n, i) > 0]
+    if is_even(n):
+        cur = get_factor_power(n, 2)
+        primes_pows.append(cur)
+        n //= 2 ** cur
+    for i in primes_range:
+        cur = get_factor_power(n, i)
+        primes_pows.append(cur)
+        n //= i ** cur
+        if i <= 1:
+            break
+    return get_iterable_product(primes_pows)
+
+
+def get_factor_power(n, d):
+    num = 0
+    while n % d == 0:
+        num += 1
+        n //= d
+    return num

@@ -38,7 +38,7 @@ class LongestCollatzSequence:
             cur = i
 
     def get_next_num_in_chain(self, n):
-        if eu.is_odd_num(n):
+        if eu.is_odd(n):
             return 3 * n + 1
         return n >> 1
 

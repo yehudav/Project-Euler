@@ -1,6 +1,7 @@
 import euler_utils as eu
 
 
+# todo
 def get_consecutive_prime_sum_below_bound(n):
     primes_in_order = [i for i in eu.sieve_of_eratosthenes(n) if i != 0]
     return get_longest_consecutive_prime_sum(primes_in_order)
