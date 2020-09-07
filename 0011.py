@@ -19,10 +19,10 @@ def get_max_product_of_n_adjacent_numbers(matrix, n):
 
 
 def get_max_product_of_lines(lines, n):
-    return max(get_max_product_of_single_line(line, n) for line in lines)
+    return max(get_max_product_of_line(line, n) for line in lines)
 
 
-def get_max_product_of_single_line(line, n):
+def get_max_product_of_line(line, n):
     if len(line) < n:
         return get_max_product_of_n_numbers(line)
     return max(get_max_product_of_n_numbers(line[i:i + n]) for i in range(len(line) - n + 1))
