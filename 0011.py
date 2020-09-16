@@ -1,6 +1,3 @@
-# # todo refactor
-
-
 def get_max_product_of_n_adjacent_numbers_in_matrix(path, n):
     matrix = build_matrix_from_file(path)
     return get_max_product_of_n_adjacent_numbers(matrix, n)
@@ -39,7 +36,7 @@ def get_cols(matrix):
     return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
 
 
-def get_diagonals(matrix):
+def get_diagonals(matrix):  # todo refactor
     return
 
 
