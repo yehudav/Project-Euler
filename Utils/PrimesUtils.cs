@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler
+﻿namespace Utils
 {
     public class Class1
     {
